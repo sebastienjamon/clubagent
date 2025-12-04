@@ -25,19 +25,18 @@ export default async function DashboardPage() {
         return isOwned || isSharedActive;
     }) || [];
 
-    // Post-process active agents to attach original phone numbers for Managed Agents (Cinema/Wellness)
+    // Post-process active agents to attach original phone numbers for Managed Agents
     // if the user's copy doesn't have one linked.
     for (const agent of activeAgents) {
         // @ts-ignore
-        if (agent.user_id === user.id && (!agent.phone_numbers || agent.phone_numbers.length === 0)) {
-            if (agent.name === 'Cinema' || agent.name === 'Wellness') {
-                // Find the original example agent
-                const originalAgent = agents?.find(a => a.user_id === EXAMPLE_AGENT_USER_ID && a.name === agent.name);
+        if (agent.user_id === user.id && (!agent.phone_numbers || agent.phone_numbers.length === 0) && agent.master_agent_id) {
+            // Find the master agent
+            // @ts-ignore
+            const masterAgent = agents?.find(a => a.id === agent.master_agent_id);
+            // @ts-ignore
+            if (masterAgent && masterAgent.phone_numbers && masterAgent.phone_numbers.length > 0) {
                 // @ts-ignore
-                if (originalAgent && originalAgent.phone_numbers && originalAgent.phone_numbers.length > 0) {
-                    // @ts-ignore
-                    agent.phone_numbers = originalAgent.phone_numbers;
-                }
+                agent.phone_numbers = masterAgent.phone_numbers;
             }
         }
     }

@@ -49,6 +49,7 @@ export async function hireAgent(agentId: string) {
             .insert({
                 ...agentData,
                 user_id: user.id,
+                master_agent_id: agent.id, // Link to the Master Agent
                 integrations: newIntegrations
             });
 

@@ -41,19 +41,22 @@ export default async function AgentEditorPage({ params }: { params: Promise<{ id
     }
 
     const isGlobalReadOnly = agent.user_id === EXAMPLE_AGENT_USER_ID && user?.id !== EXAMPLE_AGENT_USER_ID;
-    const isManagedAgent = agent.name === 'Cinema' || agent.name === 'Wellness';
-    const isConfigReadOnly = isGlobalReadOnly || (isManagedAgent && user?.id !== EXAMPLE_AGENT_USER_ID);
 
-    // If it's a managed copy (e.g. User's Cinema Copy), we need to fetch the ORIGINAL agent
+    // If the agent has a master_agent_id, it is a "Linked Copy" and must be Read-Only.
+    // This applies to ALL agents (Cinema, Wellness, Beach Club, etc.)
+    // @ts-ignore
+    const isLinkedAgent = !!agent.master_agent_id;
+    const isConfigReadOnly = isGlobalReadOnly || isLinkedAgent;
+
+    // If it's a linked copy, we need to fetch the MASTER agent
     // to get the correct credentials for the Activity view (Salesforce/Airtable).
-    // The user's copy has empty credentials, so we can't use it for fetching data.
     let originalAgent = null;
-    if (isConfigReadOnly && !isGlobalReadOnly) {
+    if (isLinkedAgent) {
         const { data: sourceAgent } = await supabase
             .from('agents')
             .select('*')
-            .eq('user_id', EXAMPLE_AGENT_USER_ID)
-            .eq('name', agent.name)
+            // @ts-ignore
+            .eq('id', agent.master_agent_id)
             .single();
 
         if (sourceAgent) {
