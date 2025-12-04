@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Agent } from "@/types";
-import { Save, Loader2, Mic, Building2, MessageSquare, Sparkles } from "lucide-react";
+import { Save, Loader2, Mic, Building2, MessageSquare, Sparkles, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type AgentFormProps = {
@@ -87,23 +87,29 @@ export function AgentForm({ initialData, isReadOnly }: AgentFormProps) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-3">
                         <label className="text-sm font-semibold text-slate-700">Agent Name</label>
-                        <input
-                            {...register("name", { required: "Name is required" })}
-                            disabled={isReadOnly}
-                            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all duration-200 ease-out placeholder:text-slate-400 text-slate-700 font-medium disabled:opacity-60 disabled:cursor-not-allowed"
-                            placeholder="e.g. Main Reservations Line"
-                        />
+                        <div className="relative">
+                            <input
+                                {...register("name", { required: "Name is required" })}
+                                disabled={isReadOnly}
+                                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all duration-200 ease-out placeholder:text-slate-400 text-slate-700 font-medium disabled:bg-slate-100 disabled:opacity-80 disabled:cursor-not-allowed pr-10"
+                                placeholder="e.g. Main Reservations Line"
+                            />
+                            {isReadOnly && <Lock className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />}
+                        </div>
                         {errors.name && <span className="text-sm text-red-500 font-medium">{errors.name.message}</span>}
                     </div>
 
                     <div className="space-y-3">
                         <label className="text-sm font-semibold text-slate-700">Business Name</label>
-                        <input
-                            {...register("business_name", { required: "Business name is required" })}
-                            disabled={isReadOnly}
-                            className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all duration-200 ease-out placeholder:text-slate-400 text-slate-700 font-medium disabled:opacity-60 disabled:cursor-not-allowed"
-                            placeholder="e.g. The Grand Hotel"
-                        />
+                        <div className="relative">
+                            <input
+                                {...register("business_name", { required: "Business name is required" })}
+                                disabled={isReadOnly}
+                                className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all duration-200 ease-out placeholder:text-slate-400 text-slate-700 font-medium disabled:bg-slate-100 disabled:opacity-80 disabled:cursor-not-allowed pr-10"
+                                placeholder="e.g. The Grand Hotel"
+                            />
+                            {isReadOnly && <Lock className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />}
+                        </div>
                     </div>
                 </div>
             </div>

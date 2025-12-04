@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Agent } from "@/types";
-import { Save, Loader2, Sparkles, CheckCircle2, XCircle } from "lucide-react";
+import { Save, Loader2, Sparkles, CheckCircle2, XCircle, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { testAirtableConnection } from "@/app/actions/integrations";
 
@@ -222,46 +222,58 @@ export function AgentIntegrationsForm({ initialData, isReadOnly }: AgentIntegrat
                         <div className="p-4 bg-slate-50 border-t border-slate-200 space-y-4">
                             <div className="space-y-2">
                                 <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Instance URL</label>
-                                <input
-                                    {...register("integrations.salesforce_config.instance_url")}
-                                    disabled={isReadOnly}
-                                    type={isReadOnly ? "password" : "text"}
-                                    className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-50 disabled:text-slate-500"
-                                    placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "https://your-instance.salesforce.com"}
-                                />
+                                <div className="relative">
+                                    <input
+                                        {...register("integrations.salesforce_config.instance_url")}
+                                        disabled={isReadOnly}
+                                        type={isReadOnly ? "password" : "text"}
+                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed pr-10"
+                                        placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "https://your-instance.salesforce.com"}
+                                    />
+                                    {isReadOnly && <Lock className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />}
+                                </div>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Client ID (Consumer Key)</label>
-                                    <input
-                                        {...register("integrations.salesforce_config.client_id")}
-                                        disabled={isReadOnly}
-                                        type={isReadOnly ? "password" : "text"}
-                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-50 disabled:text-slate-500"
-                                        placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "Enter Client ID (or leave empty to use Env Var)"}
-                                        value={isReadOnly ? undefined : undefined} // Let react-hook-form handle it, but if read-only we might want to force mask if it was a text field
-                                    />
+                                    <div className="relative">
+                                        <input
+                                            {...register("integrations.salesforce_config.client_id")}
+                                            disabled={isReadOnly}
+                                            type={isReadOnly ? "password" : "text"}
+                                            className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed pr-10"
+                                            placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "Enter Client ID (or leave empty to use Env Var)"}
+                                            value={isReadOnly ? undefined : undefined}
+                                        />
+                                        {isReadOnly && <Lock className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />}
+                                    </div>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Client Secret (Consumer Secret)</label>
-                                    <input
-                                        type="password"
-                                        {...register("integrations.salesforce_config.client_secret")}
-                                        disabled={isReadOnly}
-                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-50 disabled:text-slate-500"
-                                        placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "Enter Client Secret (or leave empty to use Env Var)"}
-                                    />
+                                    <div className="relative">
+                                        <input
+                                            type="password"
+                                            {...register("integrations.salesforce_config.client_secret")}
+                                            disabled={isReadOnly}
+                                            className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed pr-10"
+                                            placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "Enter Client Secret (or leave empty to use Env Var)"}
+                                        />
+                                        {isReadOnly && <Lock className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />}
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Object Name</label>
-                                <input
-                                    {...register("integrations.salesforce_config.object_name")}
-                                    disabled={isReadOnly}
-                                    className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm"
-                                    placeholder="Lead, Case, or CustomObject__c"
-                                />
+                                <div className="relative">
+                                    <input
+                                        {...register("integrations.salesforce_config.object_name")}
+                                        disabled={isReadOnly}
+                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed pr-10"
+                                        placeholder="Lead, Case, or CustomObject__c"
+                                    />
+                                    {isReadOnly && <Lock className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />}
+                                </div>
                             </div>
 
                             {!isReadOnly && (
