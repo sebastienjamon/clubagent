@@ -1,0 +1,55 @@
+{
+    "LandingPage": {
+        "nav": {
+            "signIn": "Connexion",
+            "getStarted": "Commencer"
+        },
+        "hero": {
+            "badge": "L'Avenir de l'Hospitalité",
+            "titleStart": "Élevez Votre",
+            "titleHighlight": "Expérience Client",
+            "titleEnd": "avec des Agents Intelligents.",
+            "description": "Déployez des concierges numériques 24/7 qui gèrent les réservations, répondent aux demandes et fournissent des recommandations personnalisées avec une chaleur humaine.",
+            "cta": "Engagez Votre Premier Agent"
+        },
+        "verticals": {
+            "title": "Conçu pour l'Excellence",
+            "subtitle": "Découvrez comment Club Agent transforme l'expérience client dans différents secteurs de l'hospitalité.",
+            "theater": {
+                "title": "Cinéma & Théâtre",
+                "description": "Billetterie, horaires & objets perdus.",
+                "cta": "Voir Détails"
+            },
+            "hotel": {
+                "title": "Hôtels de Luxe",
+                "description": "Réception, room service & conciergerie.",
+                "cta": "Voir Détails"
+            },
+            "beachClub": {
+                "title": "Beach Clubs",
+                "description": "Cabanas VIP & service bouteille.",
+                "cta": "Voir Détails"
+            },
+            "wellness": {
+                "title": "Bien-être",
+                "description": "Planning des cours & coordination coachs.",
+                "cta": "Voir Détails",
+                "soon": "bientôt..."
+            }
+        },
+        "features": {
+            "instantResponse": {
+                "title": "Réponse Instantanée",
+                "description": "Ne manquez jamais une demande client. Nos agents répondent instantanément, 24/7, assurant que vos clients se sentent toujours écoutés."
+            },
+            "multilingual": {
+                "title": "Support Multilingue",
+                "description": "Brisez les barrières linguistiques. Détectez et conversez automatiquement dans plus de 30 langues pour accueillir des clients du monde entier."
+            },
+            "integration": {
+                "title": "Intégration Transparente",
+                "description": "Se connecte directement à vos systèmes de réservation existants et à votre base de connaissances pour une assistance précise et en temps réel."
+            }
+        }
+    }
+}

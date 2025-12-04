@@ -1,11 +1,14 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Bot, ArrowRight, CheckCircle2, Sparkles, Globe2, Zap, Utensils, ConciergeBell, Palmtree, Dumbbell, Phone, Clapperboard } from "lucide-react";
 import { DemoVideo } from "@/components/demo-video";
 import Image from "next/image";
-import { USFlag, FrenchFlag } from "@/components/ui/flags";
 import { Footer } from "@/components/footer";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 export default function LandingPage() {
+  const t = useTranslations('LandingPage');
+
   return (
     <div className="min-h-screen bg-sand-50 font-sans text-ocean-950">
       {/* Navbar */}
@@ -23,11 +26,12 @@ export default function LandingPage() {
 
           {/* Actions */}
           <div className="flex items-center gap-6">
+            <LanguageSwitcher />
             <Link href="/login" className="text-sm font-bold uppercase tracking-wider text-ocean-900 hover:text-gold-600 transition-colors">
-              Sign In
+              {t('nav.signIn')}
             </Link>
             <Link href="/login" className="hidden md:flex px-6 py-2.5 bg-ocean-950 text-white rounded-full text-sm font-bold uppercase tracking-wider hover:bg-ocean-900 transition-all shadow-lg shadow-ocean-900/10">
-              Get Started
+              {t('nav.getStarted')}
             </Link>
           </div>
         </div>
@@ -44,16 +48,16 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-sand-200 rounded-full shadow-sm mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <Sparkles className="w-4 h-4 text-gold-500" />
-            <span className="text-xs font-bold uppercase tracking-widest text-ocean-900">The Future of Hospitality</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-ocean-900">{t('hero.badge')}</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-ocean-950 mb-6 tracking-tight leading-tight animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-            Elevate Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-gold-600">Guest Experience</span> <br />
-            with Intelligent AI.
+            {t('hero.titleStart')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-gold-600">{t('hero.titleHighlight')}</span> <br />
+            {t('hero.titleEnd')}
           </h1>
 
           <p className="text-xl text-sand-600 max-w-2xl mx-auto mb-8 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-            Deploy 24/7 digital concierges that handle reservations, answer inquiries, and provide personalized recommendations with human-like warmth.
+            {t('hero.description')}
           </p>
 
           <div className="max-w-3xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
@@ -62,7 +66,7 @@ export default function LandingPage() {
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
             <Link href="/login" className="px-8 py-4 bg-ocean-950 text-white rounded-full text-lg font-bold uppercase tracking-wider hover:bg-ocean-900 transition-all shadow-xl shadow-ocean-900/20 flex items-center gap-3 group">
-              Hire Your First Agent
+              {t('hero.cta')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -73,14 +77,13 @@ export default function LandingPage() {
       <section className="py-20 bg-sand-50 border-t border-sand-200">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-ocean-950 mb-4">Tailored for Excellence</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-ocean-950 mb-4">{t('verticals.title')}</h2>
             <p className="text-sand-600 max-w-2xl mx-auto">
-              Discover how Club Agent transforms guest experiences across different hospitality sectors.
+              {t('verticals.subtitle')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Restaurant */}
             {/* Theater */}
             <div className="group bg-white rounded-3xl border border-sand-200 hover:shadow-xl hover:shadow-emerald-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden z-20">
@@ -93,15 +96,15 @@ export default function LandingPage() {
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-4 mb-4">
-                  <h3 className="text-lg font-bold text-ocean-950">Cinema & Theater</h3>
+                  <h3 className="text-lg font-bold text-ocean-950">{t('verticals.theater.title')}</h3>
                   <div className="w-12 h-12 bg-ocean-100 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                     <Clapperboard className="w-6 h-6 text-ocean-950" />
                   </div>
                 </div>
-                <p className="text-sm text-sand-500 mb-4">Box office, showtimes & lost property.</p>
+                <p className="text-sm text-sand-500 mb-4">{t('verticals.theater.description')}</p>
                 <div className="mt-auto flex items-center justify-between pt-4 border-t border-sand-100">
                   <Link href="/theater-ai-agent" className="flex items-center text-ocean-950 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
-                    See Details <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    {t('verticals.theater.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a href="tel:+12058824622" className="relative w-16 h-16 bg-ocean-100 rounded-full flex items-center justify-center text-ocean-950 hover:bg-ocean-200 transition-colors" title="Call Demo">
                     <span className="absolute inset-0 rounded-full bg-gold-500/50 animate-ping"></span>
@@ -123,15 +126,15 @@ export default function LandingPage() {
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-4 mb-4">
-                  <h3 className="text-lg font-bold text-ocean-950">Luxury Hotels</h3>
+                  <h3 className="text-lg font-bold text-ocean-950">{t('verticals.hotel.title')}</h3>
                   <div className="w-12 h-12 bg-gold-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                     <ConciergeBell className="w-6 h-6 text-gold-600" />
                   </div>
                 </div>
-                <p className="text-sm text-sand-500 mb-4">Front desk, room service & concierge.</p>
+                <p className="text-sm text-sand-500 mb-4">{t('verticals.hotel.description')}</p>
                 <div className="mt-auto flex items-center justify-between pt-4 border-t border-sand-100">
                   <Link href="/hotel-ai-receptionist" className="flex items-center text-gold-600 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
-                    See Details <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    {t('verticals.hotel.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a href="tel:+19044101733" className="relative w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 hover:bg-gold-100 transition-colors" title="Call Demo">
                     <span className="absolute inset-0 rounded-full bg-gold-500/50 animate-ping"></span>
@@ -153,15 +156,15 @@ export default function LandingPage() {
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-4 mb-4">
-                  <h3 className="text-lg font-bold text-ocean-950">Beach Clubs</h3>
+                  <h3 className="text-lg font-bold text-ocean-950">{t('verticals.beachClub.title')}</h3>
                   <div className="w-12 h-12 bg-ocean-100 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                     <Palmtree className="w-6 h-6 text-ocean-950" />
                   </div>
                 </div>
-                <p className="text-sm text-sand-500 mb-4">VIP cabanas & bottle service bookings.</p>
+                <p className="text-sm text-sand-500 mb-4">{t('verticals.beachClub.description')}</p>
                 <div className="mt-auto flex items-center justify-between pt-4 border-t border-sand-100">
                   <Link href="/beach-club-reservation-agent" className="flex items-center text-ocean-950 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
-                    See Details <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    {t('verticals.beachClub.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a href="tel:+18579715733" className="relative w-16 h-16 bg-ocean-100 rounded-full flex items-center justify-center text-ocean-950 hover:bg-ocean-200 transition-colors" title="Call Demo">
                     <span className="absolute inset-0 rounded-full bg-gold-500/50 animate-ping"></span>
@@ -175,7 +178,7 @@ export default function LandingPage() {
             <div className="group bg-white rounded-3xl border border-sand-200 hover:shadow-xl hover:shadow-gold-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden z-20">
                 <div className="absolute top-0 right-0 w-80 bg-gold-500 text-white text-xs font-bold uppercase tracking-widest py-2 text-center transform translate-x-24 translate-y-8 rotate-45 shadow-sm hover:bg-gold-600 transition-colors flex items-center justify-center pl-4">
-                  soon... 🇫🇷
+                  {t('verticals.wellness.soon')} 🇫🇷
                 </div>
               </div>
               <div className="relative w-full h-40 overflow-hidden">
@@ -183,15 +186,15 @@ export default function LandingPage() {
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-4 mb-4">
-                  <h3 className="text-lg font-bold text-ocean-950">Wellness</h3>
+                  <h3 className="text-lg font-bold text-ocean-950">{t('verticals.wellness.title')}</h3>
                   <div className="w-12 h-12 bg-gold-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                     <Dumbbell className="w-6 h-6 text-gold-600" />
                   </div>
                 </div>
-                <p className="text-sm text-sand-500 mb-4">Class scheduling & PT coordination.</p>
+                <p className="text-sm text-sand-500 mb-4">{t('verticals.wellness.description')}</p>
                 <div className="mt-auto flex items-center justify-between pt-4 border-t border-sand-100">
                   <Link href="/gym-ai-agent" className="flex items-center text-gold-600 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
-                    See Details <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    {t('verticals.wellness.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
 
                 </div>
@@ -210,9 +213,9 @@ export default function LandingPage() {
               <div className="w-14 h-14 bg-ocean-950 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-ocean-900/20">
                 <Zap className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-ocean-950">Instant Response</h3>
+              <h3 className="text-xl font-bold text-ocean-950">{t('features.instantResponse.title')}</h3>
               <p className="text-sand-600 leading-relaxed">
-                Never miss a guest inquiry. Our agents respond instantly, 24/7, ensuring your guests always feel attended to.
+                {t('features.instantResponse.description')}
               </p>
             </div>
 
@@ -221,9 +224,9 @@ export default function LandingPage() {
               <div className="w-14 h-14 bg-gold-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-gold-900/20">
                 <Globe2 className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-ocean-950">Multilingual Support</h3>
+              <h3 className="text-xl font-bold text-ocean-950">{t('features.multilingual.title')}</h3>
               <p className="text-sand-600 leading-relaxed">
-                Break language barriers. Automatically detect and converse in over 30 languages to welcome guests from around the world.
+                {t('features.multilingual.description')}
               </p>
             </div>
 
@@ -232,16 +235,14 @@ export default function LandingPage() {
               <div className="w-14 h-14 bg-ocean-950 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-ocean-900/20">
                 <CheckCircle2 className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-ocean-950">Seamless Integration</h3>
+              <h3 className="text-xl font-bold text-ocean-950">{t('features.integration.title')}</h3>
               <p className="text-sand-600 leading-relaxed">
-                Connects directly with your existing reservation systems and knowledge base for accurate, real-time assistance.
+                {t('features.integration.description')}
               </p>
             </div>
           </div>
         </div>
       </section>
-
-
 
       {/* Footer */}
       <Footer />
