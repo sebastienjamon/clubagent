@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   title: "Club Agent",
   description: "Premium Voice Automation for Hospitality",
   icons: {
-    icon: "/icon.png?v=2",
-    shortcut: "/favicon.ico?v=2",
-    apple: "/apple-icon.png?v=2",
+    icon: "/icon.png?v=3",
+    shortcut: "/favicon.ico?v=3",
+    apple: "/apple-icon.png?v=3",
   },
 };
 
