@@ -137,32 +137,43 @@ export function AgentIntegrationsForm({ initialData, isReadOnly }: AgentIntegrat
                         <div className="p-4 bg-slate-50 border-t border-slate-200 space-y-4">
                             <div className="space-y-2">
                                 <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">API Key (Personal Access Token)</label>
-                                <input
-                                    type="password"
-                                    {...register("integrations.airtable_config.api_key")}
-                                    disabled={isReadOnly}
-                                    className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm"
-                                    placeholder="pat..."
-                                />
+                                <div className="relative">
+                                    <input
+                                        type="password"
+                                        {...register("integrations.airtable_config.api_key")}
+                                        disabled={isReadOnly}
+                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed pr-10"
+                                        placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "pat..."}
+                                    />
+                                    {isReadOnly && <Lock className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />}
+                                </div>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Base ID</label>
-                                    <input
-                                        {...register("integrations.airtable_config.base_id")}
-                                        disabled={isReadOnly}
-                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm"
-                                        placeholder="app..."
-                                    />
+                                    <div className="relative">
+                                        <input
+                                            {...register("integrations.airtable_config.base_id")}
+                                            disabled={isReadOnly}
+                                            type={isReadOnly ? "password" : "text"}
+                                            className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed pr-10"
+                                            placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "app..."}
+                                        />
+                                        {isReadOnly && <Lock className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />}
+                                    </div>
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">Table Name</label>
-                                    <input
-                                        {...register("integrations.airtable_config.table_name")}
-                                        disabled={isReadOnly}
-                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm"
-                                        placeholder="Reservations"
-                                    />
+                                    <div className="relative">
+                                        <input
+                                            {...register("integrations.airtable_config.table_name")}
+                                            disabled={isReadOnly}
+                                            type={isReadOnly ? "password" : "text"}
+                                            className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-100 disabled:text-slate-500 disabled:cursor-not-allowed pr-10"
+                                            placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "Reservations"}
+                                        />
+                                        {isReadOnly && <Lock className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />}
+                                    </div>
                                 </div>
                             </div>
                             {!isReadOnly && (

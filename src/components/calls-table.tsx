@@ -1,15 +1,21 @@
 "use client";
 
 import { createClient } from "@/lib/supabase/client";
+import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { Phone, Calendar, Clock, Play, ArrowRight } from "lucide-react";
 import { Call } from "@/types";
 import Link from "next/link";
 
-export function CallsTable({ agentId }: { agentId: string }) {
+export function CallsTable({ agentId, isReadOnly }: { agentId: string, isReadOnly?: boolean }) {
     const [calls, setCalls] = useState<Call[]>([]);
     const [loading, setLoading] = useState(true);
-    const supabase = createClient();
+
+    // If read-only (Example Agent), use anonymous client to bypass "authenticated" RLS restrictions
+    // because the policy allows anon access but blocks non-owner authenticated users.
+    const supabase = isReadOnly
+        ? createSupabaseClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!)
+        : createClient();
 
     useEffect(() => {
         const fetchCalls = async () => {
@@ -25,7 +31,7 @@ export function CallsTable({ agentId }: { agentId: string }) {
         };
 
         fetchCalls();
-    }, [agentId, supabase]);
+    }, [agentId, supabase, isReadOnly]);
 
     if (loading) return <div className="text-sand-500 text-sm p-4">Loading history...</div>;
 

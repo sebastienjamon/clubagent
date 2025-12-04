@@ -40,7 +40,12 @@ export default async function AgentEditorPage({ params }: { params: Promise<{ id
         );
     }
 
-    const isReadOnly = agent.user_id === EXAMPLE_AGENT_USER_ID && user?.id !== EXAMPLE_AGENT_USER_ID;
+    const isGlobalReadOnly = agent.user_id === EXAMPLE_AGENT_USER_ID && user?.id !== EXAMPLE_AGENT_USER_ID;
+
+    // "Managed Agents" like Cinema have locked configuration even for copies
+    // Only the Admin (EXAMPLE_AGENT_USER_ID) can edit the configuration of these agents
+    const isManagedAgent = agent.name === 'Cinema' || agent.name === 'Wellness';
+    const isConfigReadOnly = isGlobalReadOnly || (isManagedAgent && user?.id !== EXAMPLE_AGENT_USER_ID);
 
     return (
         <div className="space-y-6">
@@ -48,7 +53,7 @@ export default async function AgentEditorPage({ params }: { params: Promise<{ id
                 <Link href="/dashboard" className="text-sm text-sand-500 hover:text-ocean-700 mb-4 inline-block transition-colors">&larr; Back to Dashboard</Link>
                 <div className="flex items-center gap-3">
                     <h1 className="text-3xl font-bold text-ocean-950">{agent.name}</h1>
-                    {isReadOnly && (
+                    {(isGlobalReadOnly || isConfigReadOnly) && (
                         <span className="px-3 py-1 bg-gold-400/20 text-gold-600 text-xs font-bold uppercase tracking-widest rounded-full border border-gold-400/30">
                             Read Only
                         </span>
@@ -57,8 +62,16 @@ export default async function AgentEditorPage({ params }: { params: Promise<{ id
                 <p className="text-sand-500">Configure your agent's behavior and personality.</p>
             </div>
 
-            <AgentDetailView agent={agent} isReadOnly={isReadOnly} />
+            {/* 
+                For Managed Agents (Cinema/Wellness), we enforce FULL read-only mode for non-admins.
+                This locks both Configuration and Integrations tabs, and hides Save buttons.
+                This ensures the UI matches the "Example" agent look (Hidden placeholders, no edit buttons).
+            */}
+            <AgentDetailView
+                agent={agent}
+                isReadOnly={isConfigReadOnly}
+                isConfigReadOnly={isConfigReadOnly}
+            />
         </div>
     );
 }
-

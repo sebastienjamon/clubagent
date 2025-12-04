@@ -1,6 +1,7 @@
 "use client";
 
 import { createClient } from "@/lib/supabase/client";
+import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { CalendarCheck, User, Clock, ArrowRight, Database, Table as TableIcon, Webhook, CloudLightning } from "lucide-react";
 import { Reservation, Agent } from "@/types";
@@ -10,12 +11,16 @@ import { cn } from "@/lib/utils";
 
 import { SalesforceDataView } from "./salesforce-data-view";
 
-export function ActionsView({ agent }: { agent: Agent }) {
+export function ActionsView({ agent, isReadOnly }: { agent: Agent, isReadOnly?: boolean }) {
     const [activeTab, setActiveTab] = useState<'webapp' | 'airtable' | 'salesforce' | 'custom'>('webapp');
     const [reservations, setReservations] = useState<Reservation[]>([]);
     const [airtableRecords, setAirtableRecords] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
-    const supabase = createClient();
+
+    // If read-only (Example Agent), use anonymous client to bypass "authenticated" RLS restrictions
+    const supabase = isReadOnly
+        ? createSupabaseClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!)
+        : createClient();
 
     // Fetch Web App Reservations
     useEffect(() => {
