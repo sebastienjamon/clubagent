@@ -104,7 +104,9 @@ export async function testSalesforceConnection(config: { instance_url: string; c
 }
 
 export async function fetchSalesforceRecords(config: { instance_url: string; client_id: string; client_secret: string; object_name: string }) {
-    if (!config.instance_url || !config.client_id || !config.client_secret) {
+    // We relax the check here because authenticateSalesforce will check for Env Vars if config is missing.
+    // However, we at least need an object name to know what to query.
+    if (!config.object_name) {
         return { success: false, records: [] };
     }
 

@@ -41,11 +41,25 @@ export default async function AgentEditorPage({ params }: { params: Promise<{ id
     }
 
     const isGlobalReadOnly = agent.user_id === EXAMPLE_AGENT_USER_ID && user?.id !== EXAMPLE_AGENT_USER_ID;
-
-    // "Managed Agents" like Cinema have locked configuration even for copies
-    // Only the Admin (EXAMPLE_AGENT_USER_ID) can edit the configuration of these agents
     const isManagedAgent = agent.name === 'Cinema' || agent.name === 'Wellness';
     const isConfigReadOnly = isGlobalReadOnly || (isManagedAgent && user?.id !== EXAMPLE_AGENT_USER_ID);
+
+    // If it's a managed copy (e.g. User's Cinema Copy), we need to fetch the ORIGINAL agent
+    // to get the correct credentials for the Activity view (Salesforce/Airtable).
+    // The user's copy has empty credentials, so we can't use it for fetching data.
+    let originalAgent = null;
+    if (isConfigReadOnly && !isGlobalReadOnly) {
+        const { data: sourceAgent } = await supabase
+            .from('agents')
+            .select('*')
+            .eq('user_id', EXAMPLE_AGENT_USER_ID)
+            .eq('name', agent.name)
+            .single();
+
+        if (sourceAgent) {
+            originalAgent = sourceAgent;
+        }
+    }
 
     return (
         <div className="space-y-6">
@@ -69,6 +83,7 @@ export default async function AgentEditorPage({ params }: { params: Promise<{ id
             */}
             <AgentDetailView
                 agent={agent}
+                originalAgent={originalAgent}
                 isReadOnly={isConfigReadOnly}
                 isConfigReadOnly={isConfigReadOnly}
             />

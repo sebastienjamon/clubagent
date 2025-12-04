@@ -13,9 +13,25 @@ export async function authenticateSalesforce(config: SalesforceConfig) {
     const instanceUrl = config.instance_url || process.env.SALESFORCE_INSTANCE_URL;
 
     if (!clientId || !clientSecret || !instanceUrl) {
-        console.error("Salesforce Auth Error: Missing configuration (checked config and env vars)");
+        console.error("Salesforce Auth Error: Missing configuration");
+        console.error("Config provided:", {
+            hasClientId: !!config.client_id,
+            hasClientSecret: !!config.client_secret,
+            hasInstanceUrl: !!config.instance_url
+        });
+        console.error("Env Vars:", {
+            hasEnvClientId: !!process.env.SALESFORCE_CLIENT_ID,
+            hasEnvClientSecret: !!process.env.SALESFORCE_CLIENT_SECRET,
+            hasEnvInstanceUrl: !!process.env.SALESFORCE_INSTANCE_URL
+        });
         return null;
     }
+
+    console.log("Salesforce Auth Attempt:", {
+        instanceUrl,
+        clientIdMasked: clientId.substring(0, 5) + '...',
+        usingEnvVars: !config.client_id
+    });
 
     const params = new URLSearchParams();
     params.append('grant_type', 'client_credentials');

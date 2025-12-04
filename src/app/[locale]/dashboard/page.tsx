@@ -22,12 +22,25 @@ export default async function DashboardPage() {
         const isOwned = a.user_id === user.id;
         // @ts-ignore
         const isSharedActive = a.user_id === EXAMPLE_AGENT_USER_ID && a.integrations?.status === 'active';
-
-        // If it's owned, it's active. If it's shared/default, it's active unless user has a copy? 
-        // Actually, if user has a copy, we should probably hide the shared default to avoid duplicates?
-        // For now, let's just show owned agents and shared defaults.
         return isOwned || isSharedActive;
     }) || [];
+
+    // Post-process active agents to attach original phone numbers for Managed Agents (Cinema/Wellness)
+    // if the user's copy doesn't have one linked.
+    for (const agent of activeAgents) {
+        // @ts-ignore
+        if (agent.user_id === user.id && (!agent.phone_numbers || agent.phone_numbers.length === 0)) {
+            if (agent.name === 'Cinema' || agent.name === 'Wellness') {
+                // Find the original example agent
+                const originalAgent = agents?.find(a => a.user_id === EXAMPLE_AGENT_USER_ID && a.name === agent.name);
+                // @ts-ignore
+                if (originalAgent && originalAgent.phone_numbers && originalAgent.phone_numbers.length > 0) {
+                    // @ts-ignore
+                    agent.phone_numbers = originalAgent.phone_numbers;
+                }
+            }
+        }
+    }
 
     // 2. Available Agents: Shared agents marked as inactive (store) AND user doesn't have a copy
     const availableAgents = agents?.filter(a => {

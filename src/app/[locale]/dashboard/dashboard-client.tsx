@@ -56,12 +56,12 @@ export function DashboardClient({ activeAgents, availableAgents }: DashboardClie
                                 {/* Overlay for text readability if needed, though text is below */}
                                 <div className="absolute inset-0 bg-black/10"></div>
 
-                                {agent.user_id === EXAMPLE_AGENT_USER_ID && (
+                                {agent.user_id === EXAMPLE_AGENT_USER_ID || agent.name === 'Cinema' || agent.name === 'Wellness' ? (
                                     <div className="absolute top-3 left-3 z-10 bg-gold-400/90 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-widest shadow-sm flex items-center gap-1">
                                         <Sparkles className="w-3 h-3" />
                                         Example
                                     </div>
-                                )}     {/* Status Badge */}
+                                ) : null}     {/* Status Badge */}
                                 <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-white/20 backdrop-blur-md text-white rounded-full text-xs font-bold uppercase tracking-widest border border-white/30 shadow-sm z-10">
                                     <span className="relative flex h-2 w-2">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
