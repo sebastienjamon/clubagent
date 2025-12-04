@@ -8,13 +8,22 @@ type SalesforceConfig = {
 };
 
 export async function authenticateSalesforce(config: SalesforceConfig) {
+    const clientId = config.client_id || process.env.SALESFORCE_CLIENT_ID;
+    const clientSecret = config.client_secret || process.env.SALESFORCE_CLIENT_SECRET;
+    const instanceUrl = config.instance_url || process.env.SALESFORCE_INSTANCE_URL;
+
+    if (!clientId || !clientSecret || !instanceUrl) {
+        console.error("Salesforce Auth Error: Missing configuration (checked config and env vars)");
+        return null;
+    }
+
     const params = new URLSearchParams();
     params.append('grant_type', 'client_credentials');
-    params.append('client_id', config.client_id);
-    params.append('client_secret', config.client_secret);
+    params.append('client_id', clientId);
+    params.append('client_secret', clientSecret);
 
     try {
-        const response = await fetch(`${config.instance_url}/services/oauth2/token`, {
+        const response = await fetch(`${instanceUrl}/services/oauth2/token`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
