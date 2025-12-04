@@ -31,4 +31,4 @@ CREATE POLICY "Users can view their own agents"
 ON public.agents
 FOR SELECT
 TO authenticated
-USING (auth.uid() = user_id);
+USING (auth.uid() = user_id OR user_id = '7cba02cf-66d1-4321-a987-0e43ac304aae');
