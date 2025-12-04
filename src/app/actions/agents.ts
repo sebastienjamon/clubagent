@@ -41,7 +41,7 @@ export async function hireAgent(agentId: string) {
 
     if (insertError) {
         console.error("Clone failed:", insertError);
-        throw new Error("Failed to hire agent");
+        return { success: false, error: insertError.message };
     }
 
     revalidatePath('/dashboard');

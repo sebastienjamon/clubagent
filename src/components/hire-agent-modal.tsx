@@ -19,10 +19,15 @@ export function HireAgentModal({ isOpen, onClose, availableAgents }: HireAgentMo
     const handleHire = async (agentId: string) => {
         setHiringId(agentId);
         try {
-            await hireAgent(agentId);
-            onClose(); // Close modal on success (dashboard will revalidate)
+            const result = await hireAgent(agentId);
+            if (result.success) {
+                onClose();
+            } else {
+                alert("Failed to hire agent: " + (result.error || "Unknown error"));
+            }
         } catch (error) {
             console.error("Failed to hire agent:", error);
+            alert("An unexpected error occurred.");
         } finally {
             setHiringId(null);
         }
