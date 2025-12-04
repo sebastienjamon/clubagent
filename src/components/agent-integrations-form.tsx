@@ -225,8 +225,9 @@ export function AgentIntegrationsForm({ initialData, isReadOnly }: AgentIntegrat
                                 <input
                                     {...register("integrations.salesforce_config.instance_url")}
                                     disabled={isReadOnly}
-                                    className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm"
-                                    placeholder="https://trailsignup-294bde59886e49.my.salesforce.com"
+                                    type={isReadOnly ? "password" : "text"}
+                                    className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-50 disabled:text-slate-500"
+                                    placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "https://your-instance.salesforce.com"}
                                 />
                             </div>
                             <div className="grid grid-cols-2 gap-4">
