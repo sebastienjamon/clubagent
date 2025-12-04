@@ -235,8 +235,10 @@ export function AgentIntegrationsForm({ initialData, isReadOnly }: AgentIntegrat
                                     <input
                                         {...register("integrations.salesforce_config.client_id")}
                                         disabled={isReadOnly}
-                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm"
-                                        placeholder="3MVG9gYjOgxHsENKpHgD5woIidfnphpWrA0GJTYc8t_dFbsRnXOoFuhDIb87tuPYD_1AMFa2dn_5z7hO.a2if"
+                                        type={isReadOnly ? "password" : "text"}
+                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-50 disabled:text-slate-500"
+                                        placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "3MVG9gYjOgxHsENKpHgD5woIidfnphpWrA0GJTYc8t_dFbsRnXOoFuhDIb87tuPYD_1AMFa2dn_5z7hO.a2if"}
+                                        value={isReadOnly ? undefined : undefined} // Let react-hook-form handle it, but if read-only we might want to force mask if it was a text field
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -245,8 +247,8 @@ export function AgentIntegrationsForm({ initialData, isReadOnly }: AgentIntegrat
                                         type="password"
                                         {...register("integrations.salesforce_config.client_secret")}
                                         disabled={isReadOnly}
-                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm"
-                                        placeholder="429030E0C8D018C639BAAD3DEB8F98663D26BA6DD79AC0EBB2D231E6D9C31067"
+                                        className="w-full px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm disabled:bg-slate-50 disabled:text-slate-500"
+                                        placeholder={isReadOnly ? "•••••••••••••••• (Hidden)" : "429030E0C8D018C639BAAD3DEB8F98663D26BA6DD79AC0EBB2D231E6D9C31067"}
                                     />
                                 </div>
                             </div>
