@@ -7,7 +7,7 @@ type SalesforceConfig = {
     object_name: string;
 };
 
-async function authenticateSalesforce(config: SalesforceConfig) {
+export async function authenticateSalesforce(config: SalesforceConfig) {
     const params = new URLSearchParams();
     params.append('grant_type', 'client_credentials');
     params.append('client_id', config.client_id);
@@ -92,7 +92,7 @@ export async function saveToSalesforce(config: SalesforceConfig, data: { type: '
             : body.Subject;
 
         finalBody = {
-            Subject: subject,
+            Subject: subject.substring(0, 255),
             Description: body.Description,
             Origin: 'Phone',
             Status: 'New',

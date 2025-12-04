@@ -8,10 +8,18 @@ export function Footer() {
                     <Bot className="w-6 h-6 text-gold-400" />
                     <span className="font-bold text-xl tracking-wide">Club Agent</span>
                 </div>
-                <p className="text-sand-400 text-sm">
-                    © {new Date().getFullYear()} Club Agent. All rights reserved.
-                </p>
+                <div className="text-right">
+                    <p className="text-sand-400 text-sm mb-2">
+                        © {new Date().getFullYear()} Club Agent. All rights reserved.
+                    </p>
+                    <div className="text-xs text-sand-400/80 space-y-0.5">
+                        <p>Legal entity: EI JAMON SÉBASTIEN</p>
+                        <p>Business type: Sole Proprietor (Entreprise Individuelle)</p>
+                        <p>Registered address: 4 Rue Massenet, 75016 Paris, France</p>
+                    </div>
+                </div>
             </div>
+
         </footer>
     );
 }
