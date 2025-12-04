@@ -18,9 +18,9 @@ export function AgentIntegrationsForm({ initialData, isReadOnly }: AgentIntegrat
     const [isLoading, setIsLoading] = useState(false);
     const [testStatus, setTestStatus] = useState<{ success: boolean; message: string } | null>(null);
     const defaultSalesforceConfig = {
-        instance_url: "https://trailsignup-294bde59886e49.my.salesforce.com",
-        client_id: "3MVG9gYjOgxHsENKpHgD5woIidfnphpWrA0GJTYc8t_dFbsRnXOoFuhDIb87tuPYD_1AMFa2dn_5z7hO.a2if",
-        client_secret: "429030E0C8D018C639BAAD3DEB8F98663D26BA6DD79AC0EBB2D231E6D9C31067",
+        instance_url: "",
+        client_id: "",
+        client_secret: "",
         object_name: "Case"
     };
 

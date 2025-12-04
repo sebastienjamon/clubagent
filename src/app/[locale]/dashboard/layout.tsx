@@ -1,15 +1,22 @@
-import Link from "next/link";
+import { Link, redirect } from "@/i18n/routing";
 import { Bot, LayoutDashboard, Settings, LogOut, ChevronRight, Sparkles, User } from "lucide-react";
 import { signOut } from "@/app/actions/auth";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function DashboardLayout({
     children,
+    params
 }: {
     children: React.ReactNode;
+    params: Promise<{ locale: string }>;
 }) {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
+    const { locale } = await params;
+
+    if (!user) {
+        redirect({ href: '/login', locale });
+    }
 
     return (
         <div className="flex h-screen overflow-hidden bg-sand-50">
