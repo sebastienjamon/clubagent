@@ -205,7 +205,30 @@ export function AgentForm({ initialData, isReadOnly }: AgentFormProps) {
 
 
             {!isReadOnly && (
-                <div className="flex justify-end pt-4">
+                <div className="flex justify-between pt-4">
+                    <button
+                        type="button"
+                        onClick={async () => {
+                            if (confirm("Are you sure you want to delete this agent? This action cannot be undone.")) {
+                                setIsLoading(true);
+                                try {
+                                    const { deleteAgent } = await import("@/app/actions/agents");
+                                    await deleteAgent(initialData?.id!);
+                                    router.push("/dashboard");
+                                    router.refresh();
+                                } catch (e) {
+                                    console.error(e);
+                                    alert("Failed to delete agent.");
+                                    setIsLoading(false);
+                                }
+                            }
+                        }}
+                        disabled={isLoading}
+                        className="px-6 py-4 text-red-600 font-bold hover:bg-red-50 rounded-xl transition-colors disabled:opacity-50"
+                    >
+                        Delete Agent
+                    </button>
+
                     <button
                         type="submit"
                         disabled={isLoading}

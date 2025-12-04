@@ -64,3 +64,26 @@ export async function hireAgent(agentId: string) {
         return { success: false, error: error.message || "An unexpected error occurred." };
     }
 }
+
+export async function deleteAgent(agentId: string) {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+
+    if (!user) {
+        throw new Error("Unauthorized");
+    }
+
+    const { error } = await supabase
+        .from('agents')
+        .delete()
+        .eq('id', agentId)
+        .eq('user_id', user.id); // Extra safety check
+
+    if (error) {
+        console.error("Delete failed:", error);
+        throw new Error("Failed to delete agent");
+    }
+
+    revalidatePath('/dashboard');
+    return { success: true };
+}
