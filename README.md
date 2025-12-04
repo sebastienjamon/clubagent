@@ -38,3 +38,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Security
 
 This project has been patched for CVE-2025-55182 (Next.js/React Server Components vulnerability).
+
+## Features
+
+*   **Multi-language Support**: Fully internationalized (English/French) using `next-intl`.
+*   **AI Agents**: Integrated with Vapi for voice automation.
+*   **Salesforce Integration**: Syncs call data to Salesforce Cases.
