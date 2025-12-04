@@ -16,11 +16,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Club Agent",
   description: "Premium Voice Automation for Hospitality",
-  icons: {
-    icon: "/club-agent-logo.png",
-    shortcut: "/club-agent-logo.png",
-    apple: "/club-agent-logo.png",
-  },
 };
 
 export default function RootLayout({
