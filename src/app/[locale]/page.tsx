@@ -177,9 +177,9 @@ export default function LandingPage() {
             {/* Gym */}
             <div className="group bg-white rounded-3xl border border-sand-200 hover:shadow-xl hover:shadow-gold-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden z-20">
-                <div className="absolute top-0 right-0 w-80 bg-gold-500 text-white text-xs font-bold uppercase tracking-widest py-2 text-center transform translate-x-24 translate-y-8 rotate-45 shadow-sm hover:bg-gold-600 transition-colors flex items-center justify-center pl-4">
-                  {t('verticals.wellness.soon')} 🇫🇷
-                </div>
+                <a href="tel:+33939034710" className="absolute top-0 right-0 w-80 bg-gold-500 text-white text-xs font-bold uppercase tracking-widest py-2 text-center transform translate-x-24 translate-y-8 rotate-45 shadow-sm hover:bg-gold-600 transition-colors flex items-center justify-center pl-4">
+                  +33 9 39 03 47 10
+                </a>
               </div>
               <div className="relative w-full h-40 overflow-hidden">
                 <Image src="/gym-banner.png" alt="Wellness" fill className="object-cover" />
@@ -196,7 +196,10 @@ export default function LandingPage() {
                   <Link href="/gym-ai-agent" className="flex items-center text-gold-600 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
                     {t('verticals.wellness.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
-
+                  <a href="tel:+33939034710" className="relative w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 hover:bg-gold-100 transition-colors" title="Call Demo">
+                    <span className="absolute inset-0 rounded-full bg-gold-500/50 animate-ping"></span>
+                    <Phone className="w-6 h-6 relative z-10" />
+                  </a>
                 </div>
               </div>
             </div>

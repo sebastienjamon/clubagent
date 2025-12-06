@@ -14,7 +14,7 @@ export default function GymPage() {
             subtitle="Keep your members moving with an AI receptionist that manages class schedules, membership questions, and PT bookings without breaking a sweat."
             heroGradient="emerald"
             ctaLabel="Call Front Desk"
-            ctaNumber="+1 (904) 410-1733"
+            ctaNumber="+33 9 39 03 47 10"
             features={[
                 "Class Scheduling & Booking",
                 "Membership Inquiries",
