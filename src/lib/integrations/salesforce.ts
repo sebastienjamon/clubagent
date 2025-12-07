@@ -121,7 +121,8 @@ export async function saveToSalesforce(config: SalesforceConfig, data: { type: '
             Description: body.Description,
             Origin: 'Phone',
             Status: 'New',
-            Priority: 'Medium'
+            Priority: 'Medium',
+            Recording_URL__c: (data.type === 'call') ? (data.payload as Call).recording_url : null
         };
     } else {
         // Fallback for custom objects: Try 'Name' and 'Description'
