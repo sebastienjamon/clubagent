@@ -124,7 +124,7 @@ export async function POST(req: NextRequest) {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        phoneNumberId: process.env.VAPI_PHONE_NUMBER_ID, // We need this!
+                        phoneNumberId: (agent.integrations as any)?.vapi_config?.phone_id || process.env.VAPI_PHONE_NUMBER_ID,
                         customer: {
                             number: from.replace('whatsapp:', '')
                         },
