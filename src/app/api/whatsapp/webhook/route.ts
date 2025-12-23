@@ -131,9 +131,13 @@ export async function POST(req: NextRequest) {
                                 ]
                             },
                             voice: {
-                                provider: (agent.voice_id && agent.voice_id.startsWith("azure-")) ? "azure" : "11labs",
-                                voiceId: (agent.voice_id && agent.voice_id.startsWith("azure-"))
+                                provider: agent.voice_id?.startsWith("azure-") ? "azure"
+                                    : agent.voice_id?.startsWith("cartesia-") ? "cartesia"
+                                    : "11labs",
+                                voiceId: agent.voice_id?.startsWith("azure-")
                                     ? agent.voice_id.replace("azure-", "")
+                                    : agent.voice_id?.startsWith("cartesia-")
+                                    ? agent.voice_id.replace("cartesia-", "")
                                     : (agent.voice_id || "21m00Tcm4TlvDq8ikWAM"),
                             }
                         }
