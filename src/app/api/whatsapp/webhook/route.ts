@@ -140,7 +140,7 @@ export async function POST(req: NextRequest) {
                                     return {
                                         provider: "cartesia",
                                         voiceId: agent.voice_id.replace("cartesia-", ""),
-                                        model: "sonic-2024-12-24",
+                                        model: "sonic-multilingual",
                                         language: "fr"
                                     };
                                 } else {
