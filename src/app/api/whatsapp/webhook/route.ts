@@ -130,16 +130,26 @@ export async function POST(req: NextRequest) {
                                     }
                                 ]
                             },
-                            voice: {
-                                provider: agent.voice_id?.startsWith("azure-") ? "azure"
-                                    : agent.voice_id?.startsWith("cartesia-") ? "cartesia"
-                                    : "11labs",
-                                voiceId: agent.voice_id?.startsWith("azure-")
-                                    ? agent.voice_id.replace("azure-", "")
-                                    : agent.voice_id?.startsWith("cartesia-")
-                                    ? agent.voice_id.replace("cartesia-", "")
-                                    : (agent.voice_id || "21m00Tcm4TlvDq8ikWAM"),
-                            }
+                            voice: (() => {
+                                if (agent.voice_id?.startsWith("azure-")) {
+                                    return {
+                                        provider: "azure",
+                                        voiceId: agent.voice_id.replace("azure-", "")
+                                    };
+                                } else if (agent.voice_id?.startsWith("cartesia-")) {
+                                    return {
+                                        provider: "cartesia",
+                                        voiceId: agent.voice_id.replace("cartesia-", ""),
+                                        model: "sonic-2024-12-24",
+                                        language: "fr"
+                                    };
+                                } else {
+                                    return {
+                                        provider: "11labs",
+                                        voiceId: agent.voice_id || "21m00Tcm4TlvDq8ikWAM"
+                                    };
+                                }
+                            })()
                         }
                     })
                 });
