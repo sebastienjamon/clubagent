@@ -139,9 +139,7 @@ export async function POST(req: NextRequest) {
                                 } else if (agent.voice_id?.startsWith("cartesia-")) {
                                     return {
                                         provider: "cartesia",
-                                        voiceId: agent.voice_id.replace("cartesia-", ""),
-                                        model: "sonic-multilingual",
-                                        language: "fr"
+                                        voiceId: agent.voice_id.replace("cartesia-", "")
                                     };
                                 } else {
                                     return {
