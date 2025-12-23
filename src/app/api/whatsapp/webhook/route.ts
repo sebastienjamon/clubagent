@@ -2,11 +2,9 @@ import { createClient } from '@supabase/supabase-js';
 import OpenAI from 'openai';
 import { NextRequest, NextResponse } from 'next/server';
 
-// Initialize OpenAI client pointing to Vapi API
-// We initialize inside the handler to avoid build-time errors if env vars are missing
-const getVapiClient = () => new OpenAI({
-    apiKey: process.env.VAPI_PRIVATE_KEY || process.env.VAPI_API_KEY || "dummy-key", // Fallback for build time
-    baseURL: 'https://api.vapi.ai/chat/v1',
+// Initialize OpenAI client for text chat responses
+const getOpenAIClient = () => new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY || "dummy-key", // Fallback for build time
 });
 
 // Initialize Supabase (Service Role for admin access to fetch agents by phone)
@@ -59,22 +57,14 @@ export async function POST(req: NextRequest) {
 
         console.log("Found agent:", agent.name);
 
-        // 3. Call Vapi Chat API
-        // We pass the "assistant" config in the 'model' parameter or as a special header?
-        // Actually, Vapi Chat API is OpenAI compatible. 
-        // If we want to use an ephemeral assistant, we might need to pass the config in the 'model' field as a JSON string or use a specific model name that accepts overrides?
-        // Wait, the search result said: "pass a configuration object directly to vapi.start()". That's for Web SDK.
-        // For Chat API, usually you pass 'assistantId' in the 'model' field.
-        // If we don't have an assistantId, can we pass the config?
-        // Let's try passing the system prompt as usual. Vapi might just use a default model but route it through their system.
-
-        // However, to support "Call Me", we need to define the tool.
+        // 3. Use OpenAI for text chat (not VAPI - VAPI is for voice only)
+        // Define a tool to handle "Call me" requests
         const tools: OpenAI.Chat.Completions.ChatCompletionTool[] = [
             {
                 type: "function",
                 function: {
                     name: "callUser",
-                    description: "Call the user on their phone number. Use this when the user explicitly asks to be called.",
+                    description: "Call the user on their phone number. Use this when the user explicitly asks to be called or wants to speak by phone.",
                     parameters: {
                         type: "object",
                         properties: {
@@ -89,13 +79,13 @@ export async function POST(req: NextRequest) {
             }
         ];
 
-        const vapi = getVapiClient();
-        const completion = await vapi.chat.completions.create({
-            model: "gpt-4o", // Or "vapi-model"? Vapi docs say it's compatible.
+        const openai = getOpenAIClient();
+        const completion = await openai.chat.completions.create({
+            model: "gpt-4o-mini",
             messages: [
                 {
                     role: "system",
-                    content: `${agent.system_prompt}\n\nYou are chatting via WhatsApp. Keep your responses concise and natural.`
+                    content: `${agent.system_prompt}\n\nYou are chatting via WhatsApp. Keep your responses concise and natural. When users want to talk by phone, use the callUser function.`
                 },
                 {
                     role: "user",
