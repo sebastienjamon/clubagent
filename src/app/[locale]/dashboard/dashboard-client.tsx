@@ -18,7 +18,7 @@ export function DashboardClient({ activeAgents, availableAgents }: DashboardClie
             <div className="flex items-end justify-between border-b border-sand-200 pb-6">
                 <div>
                     <h1 className="text-4xl font-bold text-ocean-950 tracking-tight">My Squad</h1>
-                    <p className="text-sand-900/60 mt-2 text-lg font-light">Manage your active digital concierge team.</p>
+                    <p className="text-sand-900/60 mt-2 text-lg font-light">Manage your active agents.</p>
                 </div>
             </div>
 

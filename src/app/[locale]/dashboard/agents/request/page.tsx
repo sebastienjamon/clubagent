@@ -30,7 +30,7 @@ export default function RequestAgentPage() {
                 </div>
                 <h1 className="text-3xl font-bold text-ocean-950">Request Received</h1>
                 <p className="text-lg text-sand-600 max-w-md mx-auto">
-                    Thank you for your interest. Our concierge team will review your request and contact you within 24 hours to finalize the details.
+                    Thank you for your interest. Our team will review your request and contact you within 24 hours to finalize the details.
                 </p>
                 <div className="pt-8">
                     <Link

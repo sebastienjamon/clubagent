@@ -47,7 +47,7 @@ export default async function DashboardLayout({
                     >
                         <div className="flex items-center gap-3">
                             <LayoutDashboard className="w-5 h-5 text-gold-400 group-hover:text-gold-300 transition-colors" />
-                            <span className="font-medium tracking-wide">Concierge</span>
+                            <span className="font-medium tracking-wide">Agents</span>
                         </div>
                         <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0 text-sand-200" />
                     </Link>
