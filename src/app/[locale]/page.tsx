@@ -37,82 +37,70 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative pt-16 pb-16 overflow-hidden">
+      {/* Real Estate Agent - Hero Section */}
+      <section className="relative pt-12 pb-20 overflow-hidden bg-gradient-to-b from-white to-sand-50">
         {/* Background Decor */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-[200px] -right-[200px] w-[800px] h-[800px] bg-gold-400/10 rounded-full blur-[120px]" />
           <div className="absolute top-[200px] -left-[200px] w-[600px] h-[600px] bg-ocean-500/5 rounded-full blur-[100px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-sand-200 rounded-full shadow-sm mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <Sparkles className="w-4 h-4 text-gold-500" />
-            <span className="text-xs font-bold uppercase tracking-widest text-ocean-900">{t('hero.badge')}</span>
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          {/* Badge */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-sand-200 rounded-full shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <Sparkles className="w-4 h-4 text-gold-500" />
+              <span className="text-xs font-bold uppercase tracking-widest text-ocean-900">{t('hero.badge')}</span>
+            </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-ocean-950 mb-6 tracking-tight leading-tight animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-            {t('hero.titleStart')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-gold-600">{t('hero.titleHighlight')}</span> <br />
-            {t('hero.titleEnd')}
-          </h1>
-
-          <p className="text-xl text-sand-600 max-w-2xl mx-auto mb-8 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-            {t('hero.description')}
-          </p>
-
-          <div className="max-w-3xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
-            <DemoVideo />
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
-            <Link href="/login" className="px-8 py-4 bg-ocean-950 text-white rounded-full text-lg font-bold uppercase tracking-wider hover:bg-ocean-900 transition-all shadow-xl shadow-ocean-900/20 flex items-center gap-3 group">
-              {t('hero.cta')}
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies / Verticals */}
-      <section className="py-20 bg-sand-50 border-t border-sand-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-ocean-950 mb-4">{t('verticals.title')}</h2>
-            <p className="text-sand-600 max-w-2xl mx-auto">
+          {/* Title */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold text-ocean-950 mb-4 tracking-tight leading-tight">
+              {t('verticals.title')}
+            </h1>
+            <p className="text-lg md:text-xl text-sand-600 max-w-2xl mx-auto">
               {t('verticals.subtitle')}
             </p>
           </div>
 
-          {/* Single Real Estate Agent Card */}
-          <div className="max-w-2xl mx-auto">
-            <div className="group bg-white rounded-3xl border border-sand-200 hover:shadow-2xl hover:shadow-gold-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden z-20">
-                <a href="tel:+33939034710" className="absolute top-0 right-0 w-80 bg-gold-500 text-white text-xs font-bold uppercase tracking-widest py-2 text-center transform translate-x-24 translate-y-8 rotate-45 shadow-sm hover:bg-gold-600 transition-colors flex items-center justify-center pl-4">
+          {/* Guillaume Card - Large & Prominent */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <div className="group bg-white rounded-3xl border-2 border-gold-200 shadow-2xl shadow-gold-900/10 hover:shadow-3xl hover:shadow-gold-900/20 hover:-translate-y-2 transition-all duration-300 flex flex-col relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 overflow-hidden z-20">
+                <a href="tel:+33939034710" className="absolute top-0 right-0 w-96 bg-gradient-to-r from-gold-500 to-gold-600 text-white text-sm font-bold uppercase tracking-widest py-3 text-center transform translate-x-28 translate-y-10 rotate-45 shadow-lg hover:from-gold-600 hover:to-gold-700 transition-all flex items-center justify-center pl-6">
+                  <Phone className="w-4 h-4 mr-2" />
                   +33 9 39 03 47 10
                 </a>
               </div>
-              <div className="relative w-full h-64 overflow-hidden">
-                <Image src="/realestate-banner.png" alt="Real Estate Assistant" fill className="object-cover" />
+              <div className="relative w-full h-80 overflow-hidden">
+                <Image src="/realestate-banner.png" alt="Guillaume - Assistant Immobilier IA" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex items-center gap-4 mb-6">
-                  <h3 className="text-2xl font-bold text-ocean-950">{t('verticals.realEstate.title')}</h3>
-                  <div className="w-14 h-14 bg-gold-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Building2 className="w-7 h-7 text-gold-600" />
+              <div className="p-10 flex flex-col flex-grow">
+                <div className="flex items-center gap-5 mb-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-gold-400 to-gold-500 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                    <Building2 className="w-9 h-9 text-white" />
                   </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-ocean-950">{t('verticals.realEstate.title')}</h2>
                 </div>
-                <p className="text-base text-sand-600 mb-6 leading-relaxed">{t('verticals.realEstate.description')}</p>
-                <div className="mt-auto flex items-center justify-between pt-6 border-t border-sand-100">
-                  <Link href="/agent-immobilier" className="flex items-center text-gold-600 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
-                    {t('verticals.realEstate.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <a href="tel:+33939034710" className="relative w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 hover:bg-gold-100 transition-colors" title="Appeler maintenant">
-                    <span className="absolute inset-0 rounded-full bg-gold-500/50 animate-ping"></span>
-                    <Phone className="w-6 h-6 relative z-10" />
+                <p className="text-lg text-sand-700 mb-8 leading-relaxed">{t('verticals.realEstate.description')}</p>
+                <div className="mt-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-8 border-t border-sand-100">
+                  <a href="tel:+33939034710" className="flex-1 relative px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-white rounded-2xl text-base font-bold uppercase tracking-wider hover:from-gold-600 hover:to-gold-700 transition-all shadow-lg hover:shadow-xl text-center">
+                    <Phone className="w-5 h-5 inline mr-2" />
+                    Appeler Guillaume
                   </a>
+                  <Link href="/agent-immobilier" className="flex items-center justify-center px-6 py-4 text-ocean-950 border-2 border-ocean-200 rounded-2xl text-base font-bold uppercase tracking-wider hover:bg-ocean-50 transition-all">
+                    {t('verticals.realEstate.cta')} <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Demo Video */}
+          <div className="max-w-3xl mx-auto">
+            <DemoVideo />
           </div>
         </div>
       </section>
