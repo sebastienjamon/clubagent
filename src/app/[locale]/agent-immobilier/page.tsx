@@ -25,35 +25,35 @@ export default function AgentImmobilierPage() {
             ]}
             dialogue={[
                 {
-                    speaker: "Agent",
+                    speaker: "Guest",
                     text: "Bonjour Sophie, je viens de visiter un appartement."
                 },
                 {
-                    speaker: "Sophie",
+                    speaker: "Agent",
                     text: "Super ! Raconte-moi, c'était où ?"
                 },
                 {
-                    speaker: "Agent",
+                    speaker: "Guest",
                     text: "15 rue de la Paix à Paris, 75002. C'est un T3, environ 75 mètres carrés à 350 000 euros."
                 },
                 {
-                    speaker: "Sophie",
+                    speaker: "Agent",
                     text: "Parfait ! Dans quel état est l'appartement ?"
                 },
                 {
-                    speaker: "Agent",
+                    speaker: "Guest",
                     text: "Très bon état, rénové récemment. Il y a une belle terrasse de 15m² et c'est au dernier étage."
                 },
                 {
-                    speaker: "Sophie",
+                    speaker: "Agent",
                     text: "Génial ! Et ton client, qu'est-ce qu'il en a pensé ?"
                 },
                 {
-                    speaker: "Agent",
+                    speaker: "Guest",
                     text: "Il a adoré ! La terrasse l'a vraiment séduit. Il veut faire une offre."
                 },
                 {
-                    speaker: "Sophie",
+                    speaker: "Agent",
                     text: "Excellent ! J'ai bien enregistré toutes ces informations. Elles seront synchronisées dans votre base Airtable. Bonne chance pour l'offre !"
                 }
             ]}
