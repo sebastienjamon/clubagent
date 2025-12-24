@@ -6,10 +6,10 @@
         },
         "hero": {
             "badge": "The Future of Real Estate",
-            "titleStart": "Assistant for",
+            "titleStart": "AI Agent for",
             "titleHighlight": "Real Estate Agents",
-            "titleEnd": "Made Simple.",
-            "description": "Record your property visits by phone. The assistant automatically structures your notes and syncs them to Airtable.",
+            "titleEnd": "",
+            "description": "Record your property visits by phone. Your AI agent automatically structures your notes and syncs them to Airtable.",
             "cta": "Get Started Now"
         },
         "verticals": {
