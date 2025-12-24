@@ -5,16 +5,16 @@
             "getStarted": "Commencer"
         },
         "hero": {
-            "badge": "L'Avenir de l'Immobilier",
-            "titleStart": "Agent IA pour",
-            "titleHighlight": "Agents Immobiliers",
+            "badge": "Innover pour Vendre Davantage",
+            "titleStart": "Un Agent IA pour",
+            "titleHighlight": "Vos Agents Immobiliers",
             "titleEnd": "",
             "description": "Votre assistant virtuel disponible par téléphone. Gérez vos dossiers, enregistrez vos notes, organisez votre quotidien.",
             "cta": "Commencer Maintenant"
         },
         "verticals": {
-            "title": "Conçu pour les Professionnels de l'Immobilier",
-            "subtitle": "Un assistant IA toujours disponible pour vous accompagner dans votre activité quotidienne.",
+            "title": "Un Agent IA pour Vos Agents Immobiliers",
+            "subtitle": "Guillaume est disponible 24/7 par téléphone pour aider vos agents à enregistrer leurs notes de visite, organiser leurs dossiers et gagner du temps.",
             "realEstate": {
                 "title": "Guillaume - Assistant Immobilier IA",
                 "description": "Appelez Guillaume quand vous en avez besoin. Enregistrez des notes de visite, posez des questions, organisez vos informations. Il s'adapte à vos besoins et synchronise automatiquement avec Airtable.",

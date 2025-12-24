@@ -5,16 +5,16 @@
             "getStarted": "Get Started"
         },
         "hero": {
-            "badge": "The Future of Real Estate",
-            "titleStart": "AI Agent for",
-            "titleHighlight": "Real Estate Agents",
+            "badge": "Innovate to Sell More",
+            "titleStart": "An AI Agent for",
+            "titleHighlight": "Your Real Estate Agents",
             "titleEnd": "",
             "description": "Your virtual assistant available by phone. Manage your files, record notes, organize your daily work.",
             "cta": "Get Started Now"
         },
         "verticals": {
-            "title": "Designed for Real Estate Professionals",
-            "subtitle": "An AI assistant always available to support your daily activities.",
+            "title": "An AI Agent for Your Real Estate Agents",
+            "subtitle": "Guillaume is available 24/7 by phone to help your agents record visit notes, organize files, and save time.",
             "realEstate": {
                 "title": "Guillaume - Real Estate AI Assistant",
                 "description": "Call Guillaume whenever you need. Record visit notes, ask questions, organize information. He adapts to your needs and automatically syncs with Airtable.",
