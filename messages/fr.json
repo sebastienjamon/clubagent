@@ -6,10 +6,10 @@
         },
         "hero": {
             "badge": "L'Avenir de l'Immobilier",
-            "titleStart": "Votre",
-            "titleHighlight": "Assistant Visite",
-            "titleEnd": "Intelligent.",
-            "description": "Enregistrez vos visites immobilières par téléphone. Notre assistant intelligent structure automatiquement vos notes et les synchronise avec Airtable.",
+            "titleStart": "Assistant pour",
+            "titleHighlight": "Agents Immobiliers",
+            "titleEnd": "Intelligents.",
+            "description": "Enregistrez vos visites de propriétés par téléphone. L'assistant structure automatiquement vos notes et les synchronise avec Airtable.",
             "cta": "Commencer Maintenant"
         },
         "verticals": {
