@@ -1,7 +1,5 @@
 import { Link } from "@/i18n/routing";
 import { Bot, ArrowRight, CheckCircle2, Sparkles, Globe2, Zap, Utensils, ConciergeBell, Palmtree, Dumbbell, Phone, Clapperboard, Building2 } from "lucide-react";
-import { DemoVideo } from "@/components/demo-video";
-import Image from "next/image";
 import { Footer } from "@/components/footer";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -65,82 +63,38 @@ export default function LandingPage() {
           </div>
 
           {/* BIG CTA - Call Guillaume */}
-          <div className="mb-8 md:mb-12 max-w-2xl mx-auto">
+          <div className="mb-12 md:mb-16 max-w-2xl mx-auto">
             <a
               href="tel:+33939034710"
-              className="group block relative bg-gradient-to-r from-gold-500 to-gold-600 rounded-3xl md:rounded-[2rem] p-6 md:p-10 shadow-2xl hover:shadow-3xl hover:from-gold-600 hover:to-gold-700 transition-all duration-300 hover:scale-[1.02]"
+              className="group block relative bg-white border-4 border-gold-500 rounded-3xl md:rounded-[2rem] p-6 md:p-10 shadow-2xl hover:shadow-3xl hover:border-gold-600 transition-all duration-300 hover:scale-[1.02]"
             >
               {/* Phone Icon Background */}
-              <div className="absolute top-4 right-4 md:top-6 md:right-6 w-16 h-16 md:w-24 md:h-24 bg-white/10 rounded-full flex items-center justify-center opacity-50">
-                <Phone className="w-8 h-8 md:w-12 md:h-12 text-white" />
+              <div className="absolute top-4 right-4 md:top-6 md:right-6 w-16 h-16 md:w-24 md:h-24 bg-gold-50 rounded-full flex items-center justify-center">
+                <Phone className="w-8 h-8 md:w-12 md:h-12 text-gold-600" />
               </div>
 
               {/* Content */}
               <div className="relative">
                 <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-lg">
-                    <Building2 className="w-6 h-6 md:w-8 md:h-8 text-gold-600" />
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gold-500 rounded-2xl flex items-center justify-center shrink-0 shadow-lg">
+                    <Building2 className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <p className="text-white/90 text-xs md:text-sm font-semibold uppercase tracking-wider">Appelez maintenant</p>
-                    <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold">Guillaume</h2>
+                    <p className="text-sand-600 text-xs md:text-sm font-semibold uppercase tracking-wider">Appelez maintenant</p>
+                    <h2 className="text-ocean-950 text-2xl md:text-3xl lg:text-4xl font-bold">Guillaume</h2>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center gap-2 md:gap-3 bg-white rounded-2xl md:rounded-3xl py-4 md:py-6 px-4 md:px-6 mb-3 md:mb-4 group-hover:bg-white/95 transition-colors">
-                  <Phone className="w-5 h-5 md:w-6 md:h-6 text-gold-600 animate-pulse" />
-                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-ocean-950 tracking-tight">+33 9 39 03 47 10</span>
+                <div className="flex items-center justify-center gap-2 md:gap-3 bg-gold-500 rounded-2xl md:rounded-3xl py-4 md:py-6 px-4 md:px-6 mb-3 md:mb-4 group-hover:bg-gold-600 transition-colors">
+                  <Phone className="w-5 h-5 md:w-6 md:h-6 text-white animate-pulse" />
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight">+33 9 39 03 47 10</span>
                 </div>
 
-                <p className="text-white/90 text-center text-sm md:text-base font-medium">
+                <p className="text-ocean-950 text-center text-sm md:text-base font-semibold">
                   Votre assistant IA disponible 24/7
                 </p>
               </div>
             </a>
-          </div>
-
-          {/* Explanation Card */}
-          <div className="max-w-3xl mx-auto mb-10 md:mb-12">
-            <div className="bg-white rounded-2xl md:rounded-3xl border border-sand-200 shadow-lg p-6 md:p-8 lg:p-10">
-              <div className="flex items-start gap-4 md:gap-5 mb-6">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-gold-400 to-gold-500 rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 shadow-md">
-                  <Building2 className="w-6 h-6 md:w-7 md:h-7 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-ocean-950 mb-2">{t('verticals.realEstate.title')}</h3>
-                  <p className="text-sm md:text-base text-sand-500 font-medium">Assistant virtuel pour professionnels de l'immobilier</p>
-                </div>
-              </div>
-
-              <p className="text-base md:text-lg text-sand-700 mb-6 md:mb-8 leading-relaxed">{t('verticals.realEstate.description')}</p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
-                <div className="text-center p-4 bg-sand-50 rounded-xl">
-                  <div className="text-2xl md:text-3xl font-bold text-gold-600 mb-1">24/7</div>
-                  <div className="text-xs md:text-sm text-sand-600 font-medium">Toujours disponible</div>
-                </div>
-                <div className="text-center p-4 bg-sand-50 rounded-xl">
-                  <div className="text-2xl md:text-3xl font-bold text-gold-600 mb-1"><Zap className="w-6 h-6 md:w-8 md:h-8 inline" /></div>
-                  <div className="text-xs md:text-sm text-sand-600 font-medium">Réponses instantanées</div>
-                </div>
-                <div className="text-center p-4 bg-sand-50 rounded-xl">
-                  <div className="text-2xl md:text-3xl font-bold text-gold-600 mb-1">Auto</div>
-                  <div className="text-xs md:text-sm text-sand-600 font-medium">Sync Airtable</div>
-                </div>
-              </div>
-
-              <Link
-                href="/agent-immobilier"
-                className="flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 text-ocean-950 border-2 border-ocean-200 rounded-xl md:rounded-2xl text-sm md:text-base font-bold uppercase tracking-wider hover:bg-ocean-50 transition-all w-full"
-              >
-                En savoir plus <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Demo Video */}
-          <div className="max-w-3xl mx-auto">
-            <DemoVideo />
           </div>
         </div>
       </section>
