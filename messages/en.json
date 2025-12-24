@@ -16,15 +16,15 @@
             "title": "Designed for Real Estate Professionals",
             "subtitle": "An AI assistant always available to support your daily activities.",
             "realEstate": {
-                "title": "Sophie - Real Estate AI Assistant",
-                "description": "Call Sophie whenever you need. Record visit notes, ask questions, organize information. She adapts to your needs and automatically syncs with Airtable.",
+                "title": "Guillaume - Real Estate AI Assistant",
+                "description": "Call Guillaume whenever you need. Record visit notes, ask questions, organize information. He adapts to your needs and automatically syncs with Airtable.",
                 "cta": "Learn More"
             }
         },
         "features": {
             "instantResponse": {
                 "title": "Always Available",
-                "description": "Call anytime to record information, ask questions, or organize your files. Sophie is there 24/7."
+                "description": "Call anytime to record information, ask questions, or organize your files. Guillaume is there 24/7."
             },
             "multilingual": {
                 "title": "Smart Sync",
@@ -32,7 +32,7 @@
             },
             "integration": {
                 "title": "Flexible & Adaptive",
-                "description": "Sophie adapts to your needs. Visit notes, general questions, file organization - she handles everything naturally."
+                "description": "Guillaume adapts to your needs. Visit notes, general questions, file organization - he handles everything naturally."
             }
         }
     }

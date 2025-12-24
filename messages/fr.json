@@ -9,22 +9,22 @@
             "titleStart": "Agent IA pour",
             "titleHighlight": "Agents Immobiliers",
             "titleEnd": "",
-            "description": "Votre assistante virtuelle disponible par téléphone. Gérez vos dossiers, enregistrez vos notes, organisez votre quotidien.",
+            "description": "Votre assistant virtuel disponible par téléphone. Gérez vos dossiers, enregistrez vos notes, organisez votre quotidien.",
             "cta": "Commencer Maintenant"
         },
         "verticals": {
             "title": "Conçu pour les Professionnels de l'Immobilier",
-            "subtitle": "Une assistante IA toujours disponible pour vous accompagner dans votre activité quotidienne.",
+            "subtitle": "Un assistant IA toujours disponible pour vous accompagner dans votre activité quotidienne.",
             "realEstate": {
-                "title": "Sophie - Assistante Immobilière IA",
-                "description": "Appelez Sophie quand vous en avez besoin. Enregistrez des notes de visite, posez des questions, organisez vos informations. Elle s'adapte à vos besoins et synchronise automatiquement avec Airtable.",
+                "title": "Guillaume - Assistant Immobilier IA",
+                "description": "Appelez Guillaume quand vous en avez besoin. Enregistrez des notes de visite, posez des questions, organisez vos informations. Il s'adapte à vos besoins et synchronise automatiquement avec Airtable.",
                 "cta": "Découvrir"
             }
         },
         "features": {
             "instantResponse": {
                 "title": "Toujours Disponible",
-                "description": "Appelez à tout moment pour enregistrer des informations, poser des questions ou organiser vos dossiers. Sophie est là 24/7."
+                "description": "Appelez à tout moment pour enregistrer des informations, poser des questions ou organiser vos dossiers. Guillaume est là 24/7."
             },
             "multilingual": {
                 "title": "Synchronisation Intelligente",
@@ -32,7 +32,7 @@
             },
             "integration": {
                 "title": "Flexible et Adaptable",
-                "description": "Sophie s'adapte à vos besoins. Notes de visite, questions générales, organisation de dossiers - elle gère tout naturellement."
+                "description": "Guillaume s'adapte à vos besoins. Notes de visite, questions générales, organisation de dossiers - il gère tout naturellement."
             }
         }
     }

@@ -2,18 +2,18 @@ import { VerticalLandingPage } from "@/components/vertical-landing-page";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Sophie - Assistante IA pour Agents Immobiliers",
-    description: "Assistante virtuelle disponible par téléphone pour gérer vos dossiers, enregistrer vos notes et organiser votre quotidien immobilier.",
+    title: "Guillaume - Assistant IA pour Agents Immobiliers",
+    description: "Assistant virtuel disponible par téléphone pour gérer vos dossiers, enregistrer vos notes et organiser votre quotidien immobilier.",
     keywords: ["assistant immobilier IA", "agent virtuel immobilier", "notes propriété", "airtable immobilier"],
 };
 
 export default function AgentImmobilierPage() {
     return (
         <VerticalLandingPage
-            title={<>Sophie <br /> Assistante IA Immobilière</>}
-            subtitle="Appelez Sophie quand vous en avez besoin. Elle vous aide à gérer vos dossiers, enregistrer vos notes et organiser votre activité."
+            title={<>Guillaume <br /> Assistant IA Immobilier</>}
+            subtitle="Appelez Guillaume quand vous en avez besoin. Il vous aide à gérer vos dossiers, enregistrer vos notes et organiser votre activité."
             heroGradient="gold"
-            ctaLabel="Appeler Sophie"
+            ctaLabel="Appeler Guillaume"
             ctaNumber="+33 9 39 03 47 10"
             features={[
                 "Conversation Naturelle",
@@ -26,35 +26,35 @@ export default function AgentImmobilierPage() {
             dialogue={[
                 {
                     speaker: "Guest",
-                    text: "Bonjour Sophie, je viens de visiter un appartement."
+                    text: "Bonjour Guillaume, je viens de visiter un T3."
                 },
                 {
                     speaker: "Agent",
-                    text: "Super ! Raconte-moi, c'était où ?"
+                    text: "Salut ! C'était où ?"
                 },
                 {
                     speaker: "Guest",
-                    text: "15 rue de la Paix à Paris, 75002. C'est un T3, environ 75 mètres carrés à 350 000 euros."
+                    text: "15 rue de la Paix, Paris 2e. 75 m², 350 000 euros."
                 },
                 {
                     speaker: "Agent",
-                    text: "Parfait ! Dans quel état est l'appartement ?"
+                    text: "Ok. État ?"
                 },
                 {
                     speaker: "Guest",
-                    text: "Très bon état, rénové récemment. Il y a une belle terrasse de 15m² et c'est au dernier étage."
+                    text: "Rénové. Belle terrasse 15m², dernier étage."
                 },
                 {
                     speaker: "Agent",
-                    text: "Génial ! Et ton client, qu'est-ce qu'il en a pensé ?"
+                    text: "Le client ?"
                 },
                 {
                     speaker: "Guest",
-                    text: "Il a adoré ! La terrasse l'a vraiment séduit. Il veut faire une offre."
+                    text: "Il a adoré la terrasse. Il veut faire une offre."
                 },
                 {
                     speaker: "Agent",
-                    text: "Excellent ! J'ai bien enregistré toutes ces informations. Elles seront synchronisées dans votre base Airtable. Bonne chance pour l'offre !"
+                    text: "C'est noté. Autre chose ?"
                 }
             ]}
         />
