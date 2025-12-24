@@ -9,30 +9,30 @@
             "titleStart": "Agent IA pour",
             "titleHighlight": "Agents Immobiliers",
             "titleEnd": "",
-            "description": "Enregistrez vos visites de propriétés par téléphone. Votre agent IA structure automatiquement vos notes et les synchronise avec Airtable.",
+            "description": "Votre assistante virtuelle disponible par téléphone. Gérez vos dossiers, enregistrez vos notes, organisez votre quotidien.",
             "cta": "Commencer Maintenant"
         },
         "verticals": {
             "title": "Conçu pour les Professionnels de l'Immobilier",
-            "subtitle": "Gagnez du temps après chaque visite. Appelez simplement notre assistant pour enregistrer toutes les informations importantes.",
+            "subtitle": "Une assistante IA toujours disponible pour vous accompagner dans votre activité quotidienne.",
             "realEstate": {
-                "title": "Assistant Visite Immobilière",
-                "description": "Appelez après chaque visite de propriété pour enregistrer rapidement l'adresse, le type de bien, la surface, le prix, l'état, les caractéristiques, l'avis de votre client et vos notes personnelles. Toutes les informations sont automatiquement structurées et synchronisées dans votre base Airtable.",
+                "title": "Sophie - Assistante Immobilière IA",
+                "description": "Appelez Sophie quand vous en avez besoin. Enregistrez des notes de visite, posez des questions, organisez vos informations. Elle s'adapte à vos besoins et synchronise automatiquement avec Airtable.",
                 "cta": "Découvrir"
             }
         },
         "features": {
             "instantResponse": {
-                "title": "Enregistrement Rapide",
-                "description": "Plus besoin de prendre des notes pendant la visite. Appelez simplement après et racontez votre visite de manière conversationnelle."
+                "title": "Toujours Disponible",
+                "description": "Appelez à tout moment pour enregistrer des informations, poser des questions ou organiser vos dossiers. Sophie est là 24/7."
             },
             "multilingual": {
-                "title": "Synchronisation Automatique",
-                "description": "Toutes vos notes de visite sont automatiquement structurées et synchronisées dans votre base Airtable pour un suivi optimal."
+                "title": "Synchronisation Intelligente",
+                "description": "Vos conversations sont automatiquement structurées et synchronisées dans votre base Airtable. Aucune saisie manuelle."
             },
             "integration": {
-                "title": "Disponible 24/7",
-                "description": "Enregistrez vos visites à tout moment, même en dehors des heures de bureau. L'assistant est toujours disponible pour vous."
+                "title": "Flexible et Adaptable",
+                "description": "Sophie s'adapte à vos besoins. Notes de visite, questions générales, organisation de dossiers - elle gère tout naturellement."
             }
         }
     }

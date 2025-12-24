@@ -2,26 +2,26 @@ import { VerticalLandingPage } from "@/components/vertical-landing-page";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Assistant Visite Immobilière | Enregistrement Notes Propriétés",
-    description: "Enregistrez vos visites immobilières par téléphone. Notre assistant intelligent structure automatiquement vos notes et les synchronise avec Airtable.",
-    keywords: ["assistant immobilier", "notes visite propriété", "enregistrement visite immobilière", "agent immobilier IA"],
+    title: "Sophie - Assistante IA pour Agents Immobiliers",
+    description: "Assistante virtuelle disponible par téléphone pour gérer vos dossiers, enregistrer vos notes et organiser votre quotidien immobilier.",
+    keywords: ["assistant immobilier IA", "agent virtuel immobilier", "notes propriété", "airtable immobilier"],
 };
 
 export default function AgentImmobilierPage() {
     return (
         <VerticalLandingPage
-            title={<>Votre Assistant <br /> Visite Immobilière</>}
-            subtitle="Gagnez du temps après chaque visite. Appelez simplement Sophie pour enregistrer toutes les informations importantes de vos visites de propriétés."
+            title={<>Sophie <br /> Assistante IA Immobilière</>}
+            subtitle="Appelez Sophie quand vous en avez besoin. Elle vous aide à gérer vos dossiers, enregistrer vos notes et organiser votre activité."
             heroGradient="gold"
             ctaLabel="Appeler Sophie"
             ctaNumber="+33 9 39 03 47 10"
             features={[
-                "Enregistrement Conversationnel",
-                "Structuration Automatique",
+                "Conversation Naturelle",
+                "Multi-usages",
                 "Synchronisation Airtable",
                 "Disponible 24/7",
-                "Notes Vocales Rapides",
-                "Suivi Client Intégré"
+                "Adaptable à vos besoins",
+                "Zéro configuration"
             ]}
             dialogue={[
                 {

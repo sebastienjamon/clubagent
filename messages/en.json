@@ -9,30 +9,30 @@
             "titleStart": "AI Agent for",
             "titleHighlight": "Real Estate Agents",
             "titleEnd": "",
-            "description": "Record your property visits by phone. Your AI agent automatically structures your notes and syncs them to Airtable.",
+            "description": "Your virtual assistant available by phone. Manage your files, record notes, organize your daily work.",
             "cta": "Get Started Now"
         },
         "verticals": {
             "title": "Designed for Real Estate Professionals",
-            "subtitle": "Save time after each visit. Simply call our assistant to record all important information.",
+            "subtitle": "An AI assistant always available to support your daily activities.",
             "realEstate": {
-                "title": "Property Visit Assistant",
-                "description": "Call after each property visit to quickly record the address, property type, size, price, condition, features, client feedback, and your personal notes. All information is automatically structured and synced to your Airtable database.",
+                "title": "Sophie - Real Estate AI Assistant",
+                "description": "Call Sophie whenever you need. Record visit notes, ask questions, organize information. She adapts to your needs and automatically syncs with Airtable.",
                 "cta": "Learn More"
             }
         },
         "features": {
             "instantResponse": {
-                "title": "Quick Recording",
-                "description": "No need to take notes during the visit. Simply call afterwards and describe your visit conversationally."
+                "title": "Always Available",
+                "description": "Call anytime to record information, ask questions, or organize your files. Sophie is there 24/7."
             },
             "multilingual": {
-                "title": "Automatic Sync",
-                "description": "All your visit notes are automatically structured and synced to your Airtable database for optimal tracking."
+                "title": "Smart Sync",
+                "description": "Your conversations are automatically structured and synced to your Airtable database. No manual entry needed."
             },
             "integration": {
-                "title": "Available 24/7",
-                "description": "Record your visits anytime, even outside business hours. The assistant is always available for you."
+                "title": "Flexible & Adaptive",
+                "description": "Sophie adapts to your needs. Visit notes, general questions, file organization - she handles everything naturally."
             }
         }
     }
