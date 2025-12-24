@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/routing";
-import { Bot, ArrowRight, CheckCircle2, Sparkles, Globe2, Zap, Utensils, ConciergeBell, Palmtree, Dumbbell, Phone, Clapperboard } from "lucide-react";
+import { Bot, ArrowRight, CheckCircle2, Sparkles, Globe2, Zap, Utensils, ConciergeBell, Palmtree, Dumbbell, Phone, Clapperboard, Building2 } from "lucide-react";
 import { DemoVideo } from "@/components/demo-video";
 import Image from "next/image";
 import { Footer } from "@/components/footer";
@@ -83,120 +83,30 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Theater */}
-            <div className="group bg-white rounded-3xl border border-sand-200 hover:shadow-xl hover:shadow-emerald-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden z-20">
-                <a href="tel:+12058824622" className="absolute top-0 right-0 w-80 bg-gold-500 text-white text-xs font-bold uppercase tracking-widest py-2 text-center transform translate-x-24 translate-y-8 rotate-45 shadow-sm hover:bg-gold-600 transition-colors flex items-center justify-center pl-4">
-                  +1 (205) 882-4622
-                </a>
-              </div>
-              <div className="relative w-full h-40 overflow-hidden">
-                <Image src="/theater-banner.png" alt="Theater" fill className="object-cover" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex items-center gap-4 mb-4">
-                  <h3 className="text-lg font-bold text-ocean-950">{t('verticals.theater.title')}</h3>
-                  <div className="w-12 h-12 bg-ocean-100 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Clapperboard className="w-6 h-6 text-ocean-950" />
-                  </div>
-                </div>
-                <p className="text-sm text-sand-500 mb-4">{t('verticals.theater.description')}</p>
-                <div className="mt-auto flex items-center justify-between pt-4 border-t border-sand-100">
-                  <Link href="/theater-ai-agent" className="flex items-center text-ocean-950 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
-                    {t('verticals.theater.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <a href="tel:+12058824622" className="relative w-16 h-16 bg-ocean-100 rounded-full flex items-center justify-center text-ocean-950 hover:bg-ocean-200 transition-colors" title="Call Demo">
-                    <span className="absolute inset-0 rounded-full bg-gold-500/50 animate-ping"></span>
-                    <Phone className="w-6 h-6 relative z-10" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Hotel */}
-            <div className="group bg-white rounded-3xl border border-sand-200 hover:shadow-xl hover:shadow-gold-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden z-20">
-                <a href="tel:+19044101733" className="absolute top-0 right-0 w-80 bg-gold-500 text-white text-xs font-bold uppercase tracking-widest py-2 text-center transform translate-x-24 translate-y-8 rotate-45 shadow-sm hover:bg-gold-600 transition-colors flex items-center justify-center pl-4">
-                  +1 (904) 410-1733
-                </a>
-              </div>
-              <div className="relative w-full h-40 overflow-hidden">
-                <Image src="/hotel-banner.png" alt="Luxury Hotels" fill className="object-cover" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex items-center gap-4 mb-4">
-                  <h3 className="text-lg font-bold text-ocean-950">{t('verticals.hotel.title')}</h3>
-                  <div className="w-12 h-12 bg-gold-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <ConciergeBell className="w-6 h-6 text-gold-600" />
-                  </div>
-                </div>
-                <p className="text-sm text-sand-500 mb-4">{t('verticals.hotel.description')}</p>
-                <div className="mt-auto flex items-center justify-between pt-4 border-t border-sand-100">
-                  <Link href="/hotel-ai-receptionist" className="flex items-center text-gold-600 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
-                    {t('verticals.hotel.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <a href="tel:+19044101733" className="relative w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 hover:bg-gold-100 transition-colors" title="Call Demo">
-                    <span className="absolute inset-0 rounded-full bg-gold-500/50 animate-ping"></span>
-                    <Phone className="w-6 h-6 relative z-10" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Beach Club */}
-            <div className="group bg-white rounded-3xl border border-sand-200 hover:shadow-xl hover:shadow-emerald-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden z-20">
-                <a href="tel:+18579715733" className="absolute top-0 right-0 w-80 bg-gold-500 text-white text-xs font-bold uppercase tracking-widest py-2 text-center transform translate-x-24 translate-y-8 rotate-45 shadow-sm hover:bg-gold-600 transition-colors flex items-center justify-center pl-4">
-                  +1 (857) 971-5733
-                </a>
-              </div>
-              <div className="relative w-full h-40 overflow-hidden">
-                <Image src="/beach-club-banner.png" alt="Beach Clubs" fill className="object-cover" />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex items-center gap-4 mb-4">
-                  <h3 className="text-lg font-bold text-ocean-950">{t('verticals.beachClub.title')}</h3>
-                  <div className="w-12 h-12 bg-ocean-100 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Palmtree className="w-6 h-6 text-ocean-950" />
-                  </div>
-                </div>
-                <p className="text-sm text-sand-500 mb-4">{t('verticals.beachClub.description')}</p>
-                <div className="mt-auto flex items-center justify-between pt-4 border-t border-sand-100">
-                  <Link href="/beach-club-reservation-agent" className="flex items-center text-ocean-950 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
-                    {t('verticals.beachClub.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <a href="tel:+18579715733" className="relative w-16 h-16 bg-ocean-100 rounded-full flex items-center justify-center text-ocean-950 hover:bg-ocean-200 transition-colors" title="Call Demo">
-                    <span className="absolute inset-0 rounded-full bg-gold-500/50 animate-ping"></span>
-                    <Phone className="w-6 h-6 relative z-10" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Gym */}
-            <div className="group bg-white rounded-3xl border border-sand-200 hover:shadow-xl hover:shadow-gold-900/5 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
+          {/* Single Real Estate Agent Card */}
+          <div className="max-w-2xl mx-auto">
+            <div className="group bg-white rounded-3xl border border-sand-200 hover:shadow-2xl hover:shadow-gold-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden z-20">
                 <a href="tel:+33939034710" className="absolute top-0 right-0 w-80 bg-gold-500 text-white text-xs font-bold uppercase tracking-widest py-2 text-center transform translate-x-24 translate-y-8 rotate-45 shadow-sm hover:bg-gold-600 transition-colors flex items-center justify-center pl-4">
                   +33 9 39 03 47 10
                 </a>
               </div>
-              <div className="relative w-full h-40 overflow-hidden">
-                <Image src="/gym-banner.png" alt="Wellness" fill className="object-cover" />
+              <div className="relative w-full h-64 overflow-hidden">
+                <Image src="/realestate-banner.png" alt="Real Estate Assistant" fill className="object-cover" />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex items-center gap-4 mb-4">
-                  <h3 className="text-lg font-bold text-ocean-950">{t('verticals.wellness.title')}</h3>
-                  <div className="w-12 h-12 bg-gold-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Dumbbell className="w-6 h-6 text-gold-600" />
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="flex items-center gap-4 mb-6">
+                  <h3 className="text-2xl font-bold text-ocean-950">{t('verticals.realEstate.title')}</h3>
+                  <div className="w-14 h-14 bg-gold-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <Building2 className="w-7 h-7 text-gold-600" />
                   </div>
                 </div>
-                <p className="text-sm text-sand-500 mb-4">{t('verticals.wellness.description')}</p>
-                <div className="mt-auto flex items-center justify-between pt-4 border-t border-sand-100">
-                  <Link href="/gym-ai-agent" className="flex items-center text-gold-600 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
-                    {t('verticals.wellness.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <p className="text-base text-sand-600 mb-6 leading-relaxed">{t('verticals.realEstate.description')}</p>
+                <div className="mt-auto flex items-center justify-between pt-6 border-t border-sand-100">
+                  <Link href="/agent-immobilier" className="flex items-center text-gold-600 text-sm font-bold uppercase tracking-wider hover:opacity-70 transition-opacity">
+                    {t('verticals.realEstate.cta')} <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                  <a href="tel:+33939034710" className="relative w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 hover:bg-gold-100 transition-colors" title="Call Demo">
+                  <a href="tel:+33939034710" className="relative w-16 h-16 bg-gold-50 rounded-full flex items-center justify-center text-gold-600 hover:bg-gold-100 transition-colors" title="Appeler maintenant">
                     <span className="absolute inset-0 rounded-full bg-gold-500/50 animate-ping"></span>
                     <Phone className="w-6 h-6 relative z-10" />
                   </a>

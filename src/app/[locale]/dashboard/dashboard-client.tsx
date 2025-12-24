@@ -1,12 +1,9 @@
 'use client';
 
-import { useState } from "react";
 import Link from "next/link";
-import { Plus, ConciergeBell, ArrowRight, Phone, ExternalLink, MoreHorizontal, Activity, Building2, Sparkles, Dumbbell, Palmtree, Clapperboard, Bot } from "lucide-react";
+import { ConciergeBell, Phone, Activity, Building2, Sparkles, Dumbbell, Palmtree, Clapperboard, Bot } from "lucide-react";
 import { Agent } from "@/types";
 import { EXAMPLE_AGENT_USER_ID } from "@/lib/constants";
-import { HireAgentModal } from "@/components/hire-agent-modal";
-
 import { AgentQRCode } from "@/components/agent-qr-code";
 
 interface DashboardClientProps {
@@ -15,7 +12,6 @@ interface DashboardClientProps {
 }
 
 export function DashboardClient({ activeAgents, availableAgents }: DashboardClientProps) {
-    const [isHireModalOpen, setIsHireModalOpen] = useState(false);
 
     return (
         <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -78,7 +74,9 @@ export function DashboardClient({ activeAgents, availableAgents }: DashboardClie
                                     <div className="w-full h-full bg-sand-100 rounded-full flex items-center justify-center overflow-hidden border border-sand-200 group-hover:border-ocean-200 transition-colors relative">
                                         {/* Placeholder Avatar */}
                                         <div className="absolute inset-0 bg-gradient-to-tr from-sand-200 to-sand-50 opacity-50"></div>
-                                        {agent.business_name?.includes("Beach Club") ? (
+                                        {agent.name.includes("Immobilier") ? (
+                                            <Building2 className="w-8 h-8 text-ocean-800 relative z-10" />
+                                        ) : agent.business_name?.includes("Beach Club") ? (
                                             <Palmtree className="w-8 h-8 text-ocean-800 relative z-10" />
                                         ) : agent.name.includes("Front Desk") ? (
                                             <ConciergeBell className="w-8 h-8 text-ocean-800 relative z-10" />
@@ -133,27 +131,7 @@ export function DashboardClient({ activeAgents, availableAgents }: DashboardClie
                         </div>
                     );
                 })}
-
-                {/* Hire New Agent Card */}
-                <button
-                    onClick={() => setIsHireModalOpen(true)}
-                    className="group flex flex-col items-center justify-center p-8 rounded-2xl border-2 border-dashed border-sand-300 hover:border-ocean-400 hover:bg-ocean-50/30 transition-all duration-300 cursor-pointer min-h-[300px] w-full text-left"
-                >
-                    <div className="w-16 h-16 bg-white rounded-full shadow-sm border border-sand-200 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
-                        <Plus className="w-8 h-8 text-sand-400 group-hover:text-ocean-600 transition-colors" />
-                    </div>
-                    <h3 className="text-xl font-bold text-ocean-950 group-hover:text-ocean-700 transition-colors">Hire a New Agent</h3>
-                    <p className="text-sand-500 text-sm mt-2 text-center max-w-[200px] font-medium">
-                        Expand your team with a specialized AI assistant.
-                    </p>
-                </button>
             </div>
-
-            <HireAgentModal
-                isOpen={isHireModalOpen}
-                onClose={() => setIsHireModalOpen(false)}
-                availableAgents={availableAgents}
-            />
         </div>
     );
 }

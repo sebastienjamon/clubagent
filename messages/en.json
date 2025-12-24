@@ -5,50 +5,34 @@
             "getStarted": "Get Started"
         },
         "hero": {
-            "badge": "The Future of Hospitality",
-            "titleStart": "Elevate Your",
-            "titleHighlight": "Guest Experience",
-            "titleEnd": "with Intelligent Agents.",
-            "description": "Deploy 24/7 digital concierges that handle reservations, answer inquiries, and provide personalized recommendations with human-like warmth.",
-            "cta": "Hire Your First Agent"
+            "badge": "The Future of Real Estate",
+            "titleStart": "Your",
+            "titleHighlight": "Property Visit",
+            "titleEnd": "Assistant.",
+            "description": "Record your property visits by phone. Our intelligent assistant automatically structures your notes and syncs them to Airtable.",
+            "cta": "Get Started Now"
         },
         "verticals": {
-            "title": "Tailored for Excellence",
-            "subtitle": "Discover how Club Agent transforms guest experiences across different hospitality sectors.",
-            "theater": {
-                "title": "Cinema & Theater",
-                "description": "Box office, showtimes & lost property.",
-                "cta": "See Details"
-            },
-            "hotel": {
-                "title": "Luxury Hotels",
-                "description": "Front desk, room service & concierge.",
-                "cta": "See Details"
-            },
-            "beachClub": {
-                "title": "Beach Clubs",
-                "description": "VIP cabanas & bottle service bookings.",
-                "cta": "See Details"
-            },
-            "wellness": {
-                "title": "Wellness",
-                "description": "Class scheduling & PT coordination.",
-                "cta": "See Details",
-                "soon": "soon..."
+            "title": "Designed for Real Estate Professionals",
+            "subtitle": "Save time after each visit. Simply call our assistant to record all important information.",
+            "realEstate": {
+                "title": "Property Visit Assistant",
+                "description": "Call after each property visit to quickly record the address, property type, size, price, condition, features, client feedback, and your personal notes. All information is automatically structured and synced to your Airtable database.",
+                "cta": "Learn More"
             }
         },
         "features": {
             "instantResponse": {
-                "title": "Instant Response",
-                "description": "Never miss a guest inquiry. Our agents respond instantly, 24/7, ensuring your guests always feel attended to."
+                "title": "Quick Recording",
+                "description": "No need to take notes during the visit. Simply call afterwards and describe your visit conversationally."
             },
             "multilingual": {
-                "title": "Multilingual Support",
-                "description": "Break language barriers. Automatically detect and converse in over 30 languages to welcome guests from around the world."
+                "title": "Automatic Sync",
+                "description": "All your visit notes are automatically structured and synced to your Airtable database for optimal tracking."
             },
             "integration": {
-                "title": "Seamless Integration",
-                "description": "Connects directly with your existing reservation systems and knowledge base for accurate, real-time assistance."
+                "title": "Available 24/7",
+                "description": "Record your visits anytime, even outside business hours. The assistant is always available for you."
             }
         }
     }

@@ -5,50 +5,34 @@
             "getStarted": "Commencer"
         },
         "hero": {
-            "badge": "L'Avenir de l'Hospitalité",
-            "titleStart": "Élevez Votre",
-            "titleHighlight": "Expérience Client",
-            "titleEnd": "avec des Agents Intelligents.",
-            "description": "Déployez des concierges numériques 24/7 qui gèrent les réservations, répondent aux demandes et fournissent des recommandations personnalisées avec une chaleur humaine.",
-            "cta": "Engagez Votre Premier Agent"
+            "badge": "L'Avenir de l'Immobilier",
+            "titleStart": "Votre",
+            "titleHighlight": "Assistant Visite",
+            "titleEnd": "Intelligent.",
+            "description": "Enregistrez vos visites immobilières par téléphone. Notre assistant intelligent structure automatiquement vos notes et les synchronise avec Airtable.",
+            "cta": "Commencer Maintenant"
         },
         "verticals": {
-            "title": "Conçu pour l'Excellence",
-            "subtitle": "Découvrez comment Club Agent transforme l'expérience client dans différents secteurs de l'hospitalité.",
-            "theater": {
-                "title": "Cinéma & Théâtre",
-                "description": "Billetterie, horaires & objets perdus.",
-                "cta": "Voir Détails"
-            },
-            "hotel": {
-                "title": "Hôtels de Luxe",
-                "description": "Réception, room service & conciergerie.",
-                "cta": "Voir Détails"
-            },
-            "beachClub": {
-                "title": "Beach Clubs",
-                "description": "Cabanas VIP & service bouteille.",
-                "cta": "Voir Détails"
-            },
-            "wellness": {
-                "title": "Bien-être",
-                "description": "Planning des cours & coordination coachs.",
-                "cta": "Voir Détails",
-                "soon": "bientôt..."
+            "title": "Conçu pour les Professionnels de l'Immobilier",
+            "subtitle": "Gagnez du temps après chaque visite. Appelez simplement notre assistant pour enregistrer toutes les informations importantes.",
+            "realEstate": {
+                "title": "Assistant Visite Immobilière",
+                "description": "Appelez après chaque visite de propriété pour enregistrer rapidement l'adresse, le type de bien, la surface, le prix, l'état, les caractéristiques, l'avis de votre client et vos notes personnelles. Toutes les informations sont automatiquement structurées et synchronisées dans votre base Airtable.",
+                "cta": "Découvrir"
             }
         },
         "features": {
             "instantResponse": {
-                "title": "Réponse Instantanée",
-                "description": "Ne manquez jamais une demande client. Nos agents répondent instantanément, 24/7, assurant que vos clients se sentent toujours écoutés."
+                "title": "Enregistrement Rapide",
+                "description": "Plus besoin de prendre des notes pendant la visite. Appelez simplement après et racontez votre visite de manière conversationnelle."
             },
             "multilingual": {
-                "title": "Support Multilingue",
-                "description": "Brisez les barrières linguistiques. Détectez et conversez automatiquement dans plus de 30 langues pour accueillir des clients du monde entier."
+                "title": "Synchronisation Automatique",
+                "description": "Toutes vos notes de visite sont automatiquement structurées et synchronisées dans votre base Airtable pour un suivi optimal."
             },
             "integration": {
-                "title": "Intégration Transparente",
-                "description": "Se connecte directement à vos systèmes de réservation existants et à votre base de connaissances pour une assistance précise et en temps réel."
+                "title": "Disponible 24/7",
+                "description": "Enregistrez vos visites à tout moment, même en dehors des heures de bureau. L'assistant est toujours disponible pour vous."
             }
         }
     }
