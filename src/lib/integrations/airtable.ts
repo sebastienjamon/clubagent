@@ -46,19 +46,19 @@ function parseRealEstateSummary(summary: string): Record<string, any> {
     }
 
     // Extract condition
-    const conditionMatch = summary.match(/ÉTAT:\s*(.+?)(?:\n|CARACTÉRISTIQUES:|$)/is);
+    const conditionMatch = summary.match(/ÉTAT:\s*([\s\S]+?)(?:\n\n|CARACTÉRISTIQUES:|$)/i);
     if (conditionMatch) fields["État"] = conditionMatch[1].trim();
 
     // Extract features
-    const featuresMatch = summary.match(/CARACTÉRISTIQUES:\s*(.+?)(?:\n|AVIS CLIENT:|$)/is);
+    const featuresMatch = summary.match(/CARACTÉRISTIQUES:\s*([\s\S]+?)(?:\n\n|AVIS CLIENT:|$)/i);
     if (featuresMatch) fields["Caractéristiques"] = featuresMatch[1].trim();
 
     // Extract client feedback
-    const clientMatch = summary.match(/AVIS CLIENT:\s*(.+?)(?:\n|NOTES AGENT:|$)/is);
+    const clientMatch = summary.match(/AVIS CLIENT:\s*([\s\S]+?)(?:\n\n|NOTES AGENT:|$)/i);
     if (clientMatch) fields["Avis Client"] = clientMatch[1].trim();
 
     // Extract agent notes
-    const notesMatch = summary.match(/NOTES AGENT:\s*(.+?)$/is);
+    const notesMatch = summary.match(/NOTES AGENT:\s*([\s\S]+?)$/i);
     if (notesMatch) fields["Notes Agent"] = notesMatch[1].trim();
 
     return fields;
